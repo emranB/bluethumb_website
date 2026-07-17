@@ -26,16 +26,16 @@ jobs:
 
       - name: Smoke test preview
         run: |
-          npm run preview -- --host 127.0.0.1 --port 4173 &
+          npm run preview -- --host 127.0.0.1 --port 9000 &
           pid=$!
           trap "kill $pid" EXIT
           for i in {1..20}; do
-            if curl -fsS http://127.0.0.1:4173/; then
+            if curl -fsS http://127.0.0.1:9000/; then
               break
             fi
             sleep 1
           done
-          curl -fsS http://127.0.0.1:4173/
+          curl -fsS http://127.0.0.1:9000/
 
       - name: Build Docker image
         run: docker compose build

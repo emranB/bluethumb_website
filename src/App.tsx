@@ -174,29 +174,31 @@ function useReveal() {
 function Header() {
   return (
     <header className="site-header">
-      <a className="brand-mark" href="#top" aria-label={`${config.brand.name} home`}>
-        <span className="brand-icon">
-          <img src={config.brand.logo} alt="" />
-        </span>
-        <span className="wordmark">
-          <span>{config.brand.wordmark[0]}</span>
-          <span>{config.brand.wordmark[1]}</span>
-        </span>
-      </a>
-      <nav aria-label="Primary navigation">
-        {config.nav.map((item) => {
-          const href = resolveHref(item.href, item.hrefKey);
-          return (
-            <a key={item.label} href={href}>
-              {item.label}
-            </a>
-          );
-        })}
-      </nav>
-      <a className="header-cta" href="#products">
-        Get Started
-        <ArrowRight size={16} />
-      </a>
+      <div className="header-inner">
+        <a className="brand-mark" href="#top" aria-label={`${config.brand.name} home`}>
+          <span className="brand-icon">
+            <img src={config.brand.logo} alt="" />
+          </span>
+          <span className="wordmark">
+            <span className="wordmark-name">{config.brand.wordmark[0]}</span>
+            <span className="wordmark-sub">{config.brand.wordmark[1]}</span>
+          </span>
+        </a>
+        <nav className="header-nav" aria-label="Primary navigation">
+          {config.nav.map((item) => {
+            const href = resolveHref(item.href, item.hrefKey);
+            return (
+              <a key={item.label} href={href}>
+                {item.label}
+              </a>
+            );
+          })}
+        </nav>
+        <a className="header-cta" href="#products">
+          Get Started
+          <ArrowRight size={15} />
+        </a>
+      </div>
     </header>
   );
 }
@@ -368,7 +370,7 @@ function ProductBlueprint() {
             </div>
             <div className="cta-row compact">
               <a
-                className="button primary blueprint-cta"
+                className="button primary"
                 href={config.links.demo}
                 target="_blank"
                 rel="noreferrer"
@@ -466,7 +468,7 @@ function ProductTrading() {
   return (
     <section className="product-segment trading-segment" id="trading">
       <div className="segment-shell">
-        <div className="segment-badge trading-badge">
+        <div className="segment-badge">
           <BrainCircuit size={16} />
           {config.trading.eyebrow}
         </div>
@@ -486,7 +488,7 @@ function ProductTrading() {
             </div>
             <div className="cta-row compact">
               <a
-                className="button primary trading-cta"
+                className="button primary"
                 href={config.links.tradingApp}
                 target="_blank"
                 rel="noreferrer"
@@ -504,7 +506,7 @@ function ProductTrading() {
               </a>
             </div>
           </div>
-          <div className="trading-hero-card reveal-on-scroll">
+          <div className="trading-hero-card glass-panel reveal-on-scroll">
             <div className="shot-frame crop-overview">
               <img src={config.trading.heroImage} alt={config.trading.heroImageAlt} />
             </div>
@@ -609,10 +611,10 @@ function Products() {
           <h2>{config.products.title}</h2>
           <p>{config.products.body}</p>
           <div className="product-jump">
-            <a className="jump blueprint-jump" href="#blueprint">
+            <a className="jump" href="#blueprint">
               Blueprint Loyalty
             </a>
-            <a className="jump trading-jump" href="#trading">
+            <a className="jump" href="#trading">
               Trading Intelligence
             </a>
           </div>
@@ -651,8 +653,8 @@ function Footer() {
             <img src={config.brand.logo} alt="" />
           </span>
           <span className="wordmark">
-            <span>{config.brand.wordmark[0]}</span>
-            <span>{config.brand.wordmark[1]}</span>
+            <span className="wordmark-name">{config.brand.wordmark[0]}</span>
+            <span className="wordmark-sub">{config.brand.wordmark[1]}</span>
           </span>
         </a>
         <p>{config.brand.tagline}</p>

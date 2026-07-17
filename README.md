@@ -10,13 +10,22 @@ Premium single-page React landing site for Bluethumb Technologies.
 
 ## Local development
 
+**Linux / macOS / WSL**
+
 ```bash
 ./install_dependencies.sh
 ./run.sh
 ```
 
-- Local preview: `http://localhost:4173`
-- Dev server: `npm run dev`
+**Windows**
+
+```bat
+run.bat
+```
+
+Both scripts install dependencies if needed, build the site, and serve a local preview at `http://localhost:9000` (same port as Docker).
+
+Dev server (hot reload): `npm run dev`
 
 ## Configuration
 
@@ -28,7 +37,7 @@ Edit [`config.json`](config.json) for brand copy, product content, gallery capti
 docker compose up --build
 ```
 
-Serves the built site at `http://localhost:8080`.
+Serves the built site at `http://localhost:9000`.
 
 ## Cloudflare Pages
 
@@ -50,7 +59,8 @@ npm run build
 | Script | Purpose |
 |--------|---------|
 | `./install_dependencies.sh` | Install npm dependencies |
-| `./run.sh` | Production build + local preview |
+| `./run.sh` | Build + preview (Unix) |
+| `run.bat` | Build + preview (Windows) |
 | `npm run build` | Output static site to `dist/` |
 | `npm run dev` | Vite development server |
 
