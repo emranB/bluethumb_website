@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: ./install_dependencies.sh
+
+      - name: Build
+        run: npm run build
+
+      - name: Smoke test preview
+        run: |
+          npm run preview -- --host 127.0.0.1 --port 4173 &
+          pid=$!
+          trap "kill $pid" EXIT
+          for i in {1..20}; do
+            if curl -fsS http://127.0.0.1:4173/; then
+              break
+            fi
+            sleep 1
+          done
+          curl -fsS http://127.0.0.1:4173/
+
+      - name: Build Docker image
+        run: docker compose build

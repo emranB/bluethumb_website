@@ -1,0 +1,302 @@
+{
+  "brand": {
+    "name": "Bluethumb Technologies",
+    "shortName": "BT",
+    "logo": "/images/bluethumb-mark.png",
+    "wordmark": ["BLUETHUMB", "TECHNOLOGIES"],
+    "tagline": "Financial technology that connects communities and empowers smarter decisions."
+  },
+  "links": {
+    "demo": "https://www.youtube.com/watch?v=me9PSxrPenY&t=118s",
+    "tradingApp": "https://bluethumb-trading-app.pages.dev/",
+    "localDashboard": "http://127.0.0.1:8888",
+    "contactEmail": "mailto:emran.billah@gmail.com",
+    "linkedin": "https://www.linkedin.com/company/bluethumb-technologies"
+  },
+  "nav": [
+    { "label": "Products", "href": "#products" },
+    { "label": "Mission", "href": "#mission" },
+    { "label": "Contact", "hrefKey": "contactEmail" }
+  ],
+  "hero": {
+    "eyebrow": "Socially innovative fintech",
+    "headline": "Financial technology that connects communities and empowers smarter decisions.",
+    "lede": "Bluethumb creates socially innovative financial technologies that help businesses strengthen communities and help individuals make better-informed decisions.",
+    "ctas": [
+      { "label": "Explore Products", "href": "#products", "style": "primary" },
+      { "label": "Watch Demo", "hrefKey": "demo", "style": "secondary", "external": true },
+      { "label": "Launch Trading Intelligence", "hrefKey": "tradingApp", "style": "ghost", "external": true }
+    ],
+    "dashboard": {
+      "label": "Live intelligence",
+      "score": "92%",
+      "signals": [
+        { "label": "Community reach", "value": "Growing" },
+        { "label": "Market clarity", "value": "High" }
+      ],
+      "tickers": [
+        { "label": "Retailer loyalty", "value": "+28%" },
+        { "label": "Investor confidence", "value": "+41%" },
+        { "label": "Impact pathways", "value": "Active" }
+      ]
+    }
+  },
+  "about": {
+    "eyebrow": "About Bluethumb Technologies",
+    "title": "Innovative financial products designed for real-world progress.",
+    "body": "Bluethumb Technologies builds modern financial products that connect business growth with community value, and help investors understand markets with greater confidence.",
+    "focus": [
+      {
+        "icon": "HeartHandshake",
+        "title": "Community-centered loyalty",
+        "body": "Connecting businesses and communities through smarter loyalty technology."
+      },
+      {
+        "icon": "BrainCircuit",
+        "title": "AI-powered intelligence",
+        "body": "Helping investors understand markets through clear, explainable intelligence."
+      }
+    ]
+  },
+  "products": {
+    "eyebrow": "Our Products and Services",
+    "title": "Two distinct experiences. One mission.",
+    "body": "Blueprint connects retailers, customers, and communities. Trading Intelligence gives self-directed investors a multi-brain reasoning engine with paper-first safety."
+  },
+  "blueprint": {
+    "eyebrow": "Blueprint Loyalty Program",
+    "title": "Reward customers. Support communities. Create impact.",
+    "paragraphs": [
+      "Blueprint is a next-generation loyalty platform designed to help retailers attract and retain customers while creating positive impact within the communities they serve.",
+      "Unlike traditional loyalty programs focused only on transactions, Blueprint connects retailers, consumers, and local communities around a stronger shared outcome."
+    ],
+    "retailers": {
+      "title": "For Retailers",
+      "points": [
+        "Attract new customers",
+        "Increase customer loyalty",
+        "Build stronger relationships",
+        "Create community connections",
+        "Stand apart through impact"
+      ]
+    },
+    "consumers": {
+      "title": "For Consumers",
+      "points": [
+        "Use a mobile loyalty experience",
+        "Earn rewards with local businesses",
+        "Support positive community outcomes"
+      ]
+    },
+    "demoLabel": "Watch Blueprint Demo",
+    "social": [
+      { "label": "LinkedIn", "hrefKey": "linkedin", "external": true }
+    ],
+    "mockup": {
+      "product": "Blueprint",
+      "tier": "Gold",
+      "pointsLabel": "Community Points",
+      "points": "24,850",
+      "delta": "+340 this week",
+      "impactLabel": "Community impact",
+      "impact": "68%",
+      "activity": [
+        { "icon": "ShoppingBag", "label": "Fresh Market Co.", "value": "+180" },
+        { "icon": "CircleDollarSign", "label": "Urban Coffee", "value": "+45" },
+        { "icon": "Users", "label": "Community Pharmacy", "value": "+220" }
+      ]
+    }
+  },
+  "trading": {
+    "eyebrow": "Bluethumb Trading Intelligence",
+    "title": "Professional-grade trading intelligence for self-directed investors.",
+    "lede": "Bluethumb is an AI-powered decision-support platform that watches the markets, reads the news, scores every symbol through dozens of intelligence layers, and explains its thinking in plain English.",
+    "paperFirst": "It runs in paper mode by default — you get the full experience without risking real capital until you choose to connect a broker.",
+    "committee": "Under the hood, Bluethumb is not one model guessing at the market. It is a committee of specialist brains — technical analysts, news readers, forecast engines, risk officers, and portfolio managers — that debate every symbol. Their outputs flow into OKF, the platform’s confidence engine: one time-aware ground truth per symbol. When the committee agrees, confidence rises; when sources contradict, confidence falls — and you see exactly why.",
+    "okf": {
+      "title": "OKF — Organized Knowledge Format",
+      "body": "OKF maintains one living knowledge record per symbol: technicals, news, forecasts, and multi-agent conclusions — each tagged with freshness, source trust, and explicit contradictions. Alignment raises confidence; disagreement lowers it."
+    },
+    "why": [
+      { "title": "News → signals", "copy": "Headlines are scored and tied to the symbols you care about." },
+      { "title": "Multi-layer confidence", "copy": "Buy/sell only when independent systems agree — not one black-box score." },
+      { "title": "Plain-English reasoning", "copy": "Every decision explained in language you can act on." },
+      { "title": "Walk-forward forecasts", "copy": "Price paths validated against real history — not static AI targets." },
+      { "title": "Paper-first safety", "copy": "Full dashboard and simulated fills before any live broker connection." },
+      { "title": "Three-currency book", "copy": "CAD stocks, USD stocks, and crypto each have their own wallet and P&L." }
+    ],
+    "pipeline": {
+      "title": "Decision Pipeline",
+      "subtitle": "User signal flows through every specialist brain into one explainable decision.",
+      "stages": [
+        {
+          "id": "user",
+          "title": "User Signal",
+          "subtitle": "Intent, portfolio context, and live market data",
+          "icon": "Users",
+          "tone": "cyan"
+        },
+        {
+          "id": "technical",
+          "title": "Technical Brain",
+          "subtitle": "Trend, momentum, and regime structure",
+          "icon": "LineChart",
+          "tone": "blue"
+        },
+        {
+          "id": "news",
+          "title": "News Brain",
+          "subtitle": "Headline impact scored to symbols",
+          "icon": "Newspaper",
+          "tone": "violet"
+        },
+        {
+          "id": "forecast",
+          "title": "Forecast Brain",
+          "subtitle": "Walk-forward scenario paths",
+          "icon": "Sparkles",
+          "tone": "green"
+        },
+        {
+          "id": "risk",
+          "title": "Risk & Portfolio Brains",
+          "subtitle": "Exposure, concentration, and safety limits",
+          "icon": "ShieldCheck",
+          "tone": "amber"
+        },
+        {
+          "id": "okf",
+          "title": "OKF Consensus",
+          "subtitle": "One ground-truth confidence record",
+          "icon": "Network",
+          "tone": "cyan"
+        },
+        {
+          "id": "decision",
+          "title": "Decision",
+          "subtitle": "Explainable verdict — paper-first by default",
+          "icon": "CheckCircle2",
+          "tone": "blue"
+        }
+      ]
+    },
+    "dataStack": [
+      {
+        "id": "relational",
+        "name": "Relational memory",
+        "role": "System of record",
+        "copy": "Trades, fills, configs, and durable session history — the auditable ledger behind every decision."
+      },
+      {
+        "id": "vector",
+        "name": "Vector memory",
+        "role": "Semantic recall",
+        "copy": "Finds similar news, reasoning snippets, and past setups so specialist brains can remember what worked."
+      },
+      {
+        "id": "graph",
+        "name": "Graph intelligence",
+        "role": "Relationships",
+        "copy": "Maps peers, supply chains, and who-moves-with-whom for correlated risk and opportunity."
+      },
+      {
+        "id": "okf",
+        "name": "OKF consensus",
+        "role": "Ground truth",
+        "copy": "Fuses every brain into one confidence record with evidence, contradictions, and plain-English explanation."
+      }
+    ],
+    "features": [
+      {
+        "icon": "BrainCircuit",
+        "title": "AI Market Analysis",
+        "copy": "Understand market conditions through multiple intelligence layers."
+      },
+      {
+        "icon": "Newspaper",
+        "title": "News Intelligence",
+        "copy": "See how events and headlines influence the symbols you follow."
+      },
+      {
+        "icon": "Sparkles",
+        "title": "Explainable Decisions",
+        "copy": "View the reasoning behind each insight — not just a score."
+      },
+      {
+        "icon": "LineChart",
+        "title": "Walk-forward Forecasting",
+        "copy": "Explore validated scenarios from minutes to months ahead."
+      },
+      {
+        "icon": "WalletCards",
+        "title": "Portfolio Intelligence",
+        "copy": "Track Canadian investments, US investments, ETFs, and cryptocurrency."
+      },
+      {
+        "icon": "ShieldCheck",
+        "title": "Risk Awareness",
+        "copy": "Keep opportunities and risks visible as conditions change."
+      },
+      {
+        "icon": "LockKeyhole",
+        "title": "Paper-First Safety",
+        "copy": "Explore strategies and insights without risking real capital."
+      }
+    ],
+    "ctaLabel": "Open Production PWA",
+    "localLabel": "Local dashboard",
+    "heroImage": "/images/trading-overview.png",
+    "heroImageAlt": "Bluethumb Trading Intelligence portfolio overview",
+    "gallery": {
+      "eyebrow": "Dashboard showcase",
+      "title": "Built for clarity across markets, portfolios, alerts, and forecasts.",
+      "body": "Available as a Progressive Web App on desktop and mobile. Production: bluethumb-trading-app.pages.dev",
+      "items": [
+        {
+          "image": "/images/trading-overview.png",
+          "crop": "overview",
+          "title": "Market overview",
+          "copy": "CAD, USD, and crypto wallets with session P&L, win rate, and live engine status."
+        },
+        {
+          "image": "/images/trading-forecasts.png",
+          "crop": "forecasts",
+          "title": "Forecasts",
+          "copy": "Walk-forward paths, confidence bands, and plain-English model reasoning."
+        },
+        {
+          "image": "/images/trading-alerts.png",
+          "crop": "alerts",
+          "title": "Alerts",
+          "copy": "Severity-ranked headlines linked to symbols with source and confidence."
+        },
+        {
+          "image": "/images/trading-symbols.png",
+          "crop": "symbols",
+          "title": "Portfolio intelligence",
+          "copy": "Per-symbol P&L bars across Canadian and US books."
+        },
+        {
+          "image": "/images/trading-performance.png",
+          "crop": "performance",
+          "title": "Performance",
+          "copy": "Top and worst performers with realized and unrealized gains."
+        }
+      ]
+    }
+  },
+  "mission": {
+    "eyebrow": "Mission / Vision",
+    "title": "Technology should empower people.",
+    "body": "Bluethumb Technologies creates products that simplify complexity and create meaningful impact. Blueprint helps communities and businesses connect. Bluethumb Trading Intelligence helps investors better understand markets.",
+    "statement": "Build technology that helps people make better decisions."
+  },
+  "footer": {
+    "links": [
+      { "label": "Blueprint Loyalty Program", "href": "#blueprint" },
+      { "label": "Bluethumb Trading Intelligence", "href": "#trading" },
+      { "label": "LinkedIn", "hrefKey": "linkedin", "external": true },
+      { "label": "Contact", "hrefKey": "contactEmail" }
+    ]
+  }
+}

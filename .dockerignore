@@ -1,0 +1,8 @@
+node_modules
+.git
+.github
+*.log
+*.tsbuildinfo
+.vite
+dist
+README.md
