@@ -20,7 +20,7 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import type { CSSProperties } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import config from '../config.json';
 
 const PAGES = [
@@ -64,41 +64,14 @@ function resolveHref(href?: string, hrefKey?: string) {
   return '#';
 }
 
-function usePageScroll(pages: { id: string; label: string }[]) {
+function useSectionNav(pages: { id: string; label: string }[]) {
   const [active, setActive] = useState(0);
-  const activeRef = useRef(0);
-  const lockRef = useRef(false);
-  const goToRef = useRef<(index: number) => void>(() => {});
 
   useEffect(() => {
     const getEls = () =>
       pages
         .map((page) => document.getElementById(page.id))
         .filter((el): el is HTMLElement => Boolean(el));
-
-    const fine = window.matchMedia('(pointer: fine)').matches;
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const edge = 4;
-
-    const setIndex = (index: number) => {
-      activeRef.current = index;
-      setActive(index);
-    };
-
-    const goTo = (index: number) => {
-      const list = getEls();
-      if (!list.length) {
-        return;
-      }
-      const clamped = Math.max(0, Math.min(list.length - 1, index));
-      lockRef.current = true;
-      setIndex(clamped);
-      list[clamped].scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
-      window.setTimeout(() => {
-        lockRef.current = false;
-      }, 900);
-    };
-    goToRef.current = goTo;
 
     let raf = 0;
     const onScroll = () => {
@@ -113,95 +86,43 @@ function usePageScroll(pages: { id: string; label: string }[]) {
         }
         const doc = document.documentElement;
         if (window.innerHeight + window.scrollY >= doc.scrollHeight - 2) {
-          setIndex(list.length - 1);
+          setActive(list.length - 1);
           return;
         }
-        const mid = window.innerHeight * 0.5;
-        let best = activeRef.current;
+        const mid = window.innerHeight * 0.45;
+        let best = 0;
         for (let i = 0; i < list.length; i += 1) {
           const rect = list[i].getBoundingClientRect();
-          if (rect.top <= mid && rect.bottom >= mid) {
+          if (rect.top <= mid) {
             best = i;
-            break;
           }
         }
-        if (best !== activeRef.current) {
-          setIndex(best);
-        }
+        setActive(best);
       });
-    };
-
-    const navigate = (dir: number, prevent: () => void) => {
-      const list = getEls();
-      const cur = activeRef.current;
-      const page = list[cur];
-      if (!page) {
-        return;
-      }
-      const rect = page.getBoundingClientRect();
-      const vh = window.innerHeight;
-      if (dir > 0 && rect.bottom > vh + edge) {
-        return;
-      }
-      if (dir < 0 && rect.top < -edge) {
-        return;
-      }
-      if ((dir > 0 && cur >= list.length - 1) || (dir < 0 && cur <= 0)) {
-        return;
-      }
-      prevent();
-      goTo(cur + dir);
-    };
-
-    const onWheel = (event: WheelEvent) => {
-      if (!fine || Math.abs(event.deltaY) < 2) {
-        return;
-      }
-      if (lockRef.current) {
-        event.preventDefault();
-        return;
-      }
-      navigate(event.deltaY > 0 ? 1 : -1, () => event.preventDefault());
-    };
-
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === 'Home') {
-        event.preventDefault();
-        goTo(0);
-        return;
-      }
-      if (event.key === 'End') {
-        event.preventDefault();
-        goTo(getEls().length - 1);
-        return;
-      }
-      const next = event.key === 'ArrowDown' || event.key === 'PageDown';
-      const prev = event.key === 'ArrowUp' || event.key === 'PageUp';
-      if (!next && !prev) {
-        return;
-      }
-      if (lockRef.current) {
-        event.preventDefault();
-        return;
-      }
-      navigate(next ? 1 : -1, () => event.preventDefault());
     };
 
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('wheel', onWheel, { passive: false });
-    window.addEventListener('keydown', onKey);
+    window.addEventListener('resize', onScroll);
     return () => {
       window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('wheel', onWheel);
-      window.removeEventListener('keydown', onKey);
+      window.removeEventListener('resize', onScroll);
       if (raf) {
         window.cancelAnimationFrame(raf);
       }
     };
   }, [pages]);
 
-  return { active, goTo: (index: number) => goToRef.current(index) };
+  const goTo = (index: number) => {
+    const el = document.getElementById(pages[index]?.id);
+    if (!el) {
+      return;
+    }
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  };
+
+  return { active, goTo };
 }
 
 function ScrollIndicator({
@@ -222,7 +143,7 @@ function ScrollIndicator({
           className={`scroll-dot ${index === active ? 'is-active' : ''}`}
           onClick={() => onSelect(index)}
           aria-label={page.label}
-          aria-current={index === active}
+          aria-current={index === active ? 'true' : undefined}
         >
           <span className="dot-label">{page.label}</span>
         </button>
@@ -758,7 +679,7 @@ function Footer() {
 
 function App() {
   useReveal();
-  const { active, goTo } = usePageScroll(PAGES);
+  const { active, goTo } = useSectionNav(PAGES);
 
   return (
     <>
