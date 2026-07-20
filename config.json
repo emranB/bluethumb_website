@@ -91,26 +91,27 @@
     "social": [
       { "label": "LinkedIn", "hrefKey": "linkedin", "external": true }
     ],
-    "mockup": {
-      "eyebrow": "Blueprint Network",
-      "status": "Live in market",
-      "headline": "Local spend that comes back as loyalty and community impact.",
-      "metrics": [
-        { "label": "Active members", "value": "12.4k" },
-        { "label": "Partner retailers", "value": "186" },
-        { "label": "Visit lift", "value": "+18%" }
-      ],
-      "loopTitle": "How value moves",
-      "loop": [
-        { "icon": "ShoppingBag", "title": "Shop local", "copy": "Members earn at neighborhood retailers." },
-        { "icon": "WalletCards", "title": "Unlock rewards", "copy": "Points convert into offers that bring people back." },
-        { "icon": "HeartHandshake", "title": "Fund impact", "copy": "A share of activity supports community outcomes." }
-      ],
-      "partnersTitle": "Neighborhood partners",
-      "partners": ["Harbor Grocer", "Northside Pharmacy", "Atlas Coffee", "River Books"],
-      "fundLabel": "Community fund this month",
-      "fundValue": "72%",
-      "fundNote": "$28.6k toward local programs"
+    "highlights": {
+      "eyebrow": "Why Blueprint",
+      "title": "Loyalty that strengthens local businesses and the communities around them.",
+      "items": [
+        {
+          "title": "Retailer growth",
+          "copy": "Help local businesses attract new customers and earn repeat visits through shared rewards."
+        },
+        {
+          "title": "Member rewards",
+          "copy": "Give shoppers a mobile loyalty experience that feels useful — not another unused points card."
+        },
+        {
+          "title": "Community impact",
+          "copy": "Connect everyday purchases to outcomes that matter in the neighborhoods retailers serve."
+        },
+        {
+          "title": "Shared value loop",
+          "copy": "Shop local, unlock rewards, and reinforce the relationship between merchants and members."
+        }
+      ]
     }
   },
   "trading": {

@@ -11,7 +11,6 @@ import {
   Newspaper,
   Play,
   ShieldCheck,
-  ShoppingBag,
   Sparkles,
   Users,
   WalletCards,
@@ -41,7 +40,6 @@ const icons: Record<string, LucideIcon> = {
   Newspaper,
   Play,
   ShieldCheck,
-  ShoppingBag,
   Sparkles,
   Users,
   WalletCards,
@@ -326,65 +324,26 @@ function MediaFrame({
   );
 }
 
-function BlueprintMockup() {
-  const mockup = config.blueprint.mockup;
+function BlueprintHighlights() {
+  const highlights = config.blueprint.highlights;
 
   return (
-    <div className="blueprint-panel glass-panel" aria-label="Blueprint loyalty network concept">
-      <div className="blueprint-panel__head">
-        <div>
-          <p className="eyebrow">{mockup.eyebrow}</p>
-          <h4>{mockup.headline}</h4>
-        </div>
-        <span className="blueprint-status">
-          <span className="live-dot" />
-          {mockup.status}
-        </span>
+    <div className="highlight-stack" aria-label="Blueprint product highlights">
+      <div className="highlight-stack__intro">
+        <p className="eyebrow">{highlights.eyebrow}</p>
+        <h4>{highlights.title}</h4>
       </div>
-
-      <div className="blueprint-metrics">
-        {mockup.metrics.map((metric) => (
-          <div key={metric.label}>
-            <strong>{metric.value}</strong>
-            <span>{metric.label}</span>
-          </div>
+      <div className="highlight-stack__grid">
+        {highlights.items.map((item, index) => (
+          <article
+            className="why-card glass-panel"
+            style={{ '--delay': `${index * 50}ms` } as CSSProperties}
+            key={item.title}
+          >
+            <h4>{item.title}</h4>
+            <p>{item.copy}</p>
+          </article>
         ))}
-      </div>
-
-      <div className="blueprint-loop">
-        <p className="blueprint-kicker">{mockup.loopTitle}</p>
-        <div className="blueprint-loop__grid">
-          {mockup.loop.map((item) => {
-            const Icon = icons[item.icon] ?? Sparkles;
-            return (
-              <div key={item.title}>
-                <Icon size={18} />
-                <strong>{item.title}</strong>
-                <p>{item.copy}</p>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-
-      <div className="blueprint-partners">
-        <p className="blueprint-kicker">{mockup.partnersTitle}</p>
-        <div className="blueprint-partners__row">
-          {mockup.partners.map((partner) => (
-            <span key={partner}>{partner}</span>
-          ))}
-        </div>
-      </div>
-
-      <div className="blueprint-fund">
-        <div className="blueprint-fund__meta">
-          <span>{mockup.fundLabel}</span>
-          <b>{mockup.fundValue}</b>
-        </div>
-        <div className="blueprint-fund__track" aria-hidden="true">
-          <span style={{ width: mockup.fundValue }} />
-        </div>
-        <p>{mockup.fundNote}</p>
       </div>
     </div>
   );
@@ -452,7 +411,7 @@ function ProductBlueprint() {
             </div>
           </div>
           <div className="product-visual reveal-on-scroll">
-            <BlueprintMockup />
+            <BlueprintHighlights />
           </div>
         </div>
       </div>
