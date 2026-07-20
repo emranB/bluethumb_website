@@ -3,10 +3,7 @@ import {
   ArrowUp,
   BrainCircuit,
   CheckCircle2,
-  Database,
-  GitBranch,
   HeartHandshake,
-  Layers3,
   LineChart,
   LockKeyhole,
   Mail,
@@ -23,6 +20,7 @@ import {
 import type { CSSProperties } from 'react';
 import { useEffect, useState } from 'react';
 import config from '../config.json';
+import { trackNav, trackOutbound } from './scripts/gtag';
 
 const PAGES = [
   { id: 'top', label: 'Home' },
@@ -36,10 +34,7 @@ const icons: Record<string, LucideIcon> = {
   ArrowRight,
   BrainCircuit,
   CheckCircle2,
-  Database,
-  GitBranch,
   HeartHandshake,
-  Layers3,
   LineChart,
   LockKeyhole,
   Network,
@@ -194,10 +189,14 @@ function Header() {
             );
           })}
         </nav>
-        <a className="header-cta" href="#products">
-          Get Started
-          <ArrowRight size={15} />
-        </a>
+      <a
+        className="header-cta"
+        href="#products"
+        onClick={() => trackNav('Get Started', '#products')}
+      >
+        Get Started
+        <ArrowRight size={15} />
+      </a>
       </div>
     </header>
   );
@@ -225,6 +224,11 @@ function Hero() {
                 href={href}
                 target={isExternal ? '_blank' : undefined}
                 rel={isExternal ? 'noreferrer' : undefined}
+                onClick={() =>
+                  isExternal
+                    ? trackOutbound(cta.label, href)
+                    : trackNav(cta.label, href)
+                }
               >
                 {cta.label === 'Watch Demo' ? <Play size={17} /> : null}
                 {cta.label}
@@ -426,6 +430,7 @@ function ProductBlueprint() {
                 href={config.links.demo}
                 target="_blank"
                 rel="noreferrer"
+                onClick={() => trackOutbound(config.blueprint.demoLabel, config.links.demo)}
               >
                 {config.blueprint.demoLabel}
               </a>
@@ -517,6 +522,15 @@ function DecisionPipeline() {
 }
 
 function ProductTrading() {
+  const stackIcons: Record<string, LucideIcon> = {
+    technical: LineChart,
+    news: Newspaper,
+    forecast: Sparkles,
+    committee: Users,
+    fusion: Network,
+    safety: ShieldCheck,
+  };
+
   return (
     <section className="product-segment trading-segment" id="trading">
       <div className="segment-shell">
@@ -531,30 +545,18 @@ function ProductTrading() {
             <p>{config.trading.lede}</p>
             <p>{config.trading.paperFirst}</p>
             <p>{config.trading.committee}</p>
-            <div className="okf-panel glass-panel">
-              <Layers3 size={22} />
-              <div>
-                <h4>{config.trading.okf.title}</h4>
-                <p>{config.trading.okf.body}</p>
-              </div>
-            </div>
             <div className="cta-row compact">
               <a
                 className="button primary"
                 href={config.links.tradingApp}
                 target="_blank"
                 rel="noreferrer"
+                onClick={() =>
+                  trackOutbound(config.trading.ctaLabel, config.links.tradingApp)
+                }
               >
                 {config.trading.ctaLabel}
                 <ArrowRight size={18} />
-              </a>
-              <a
-                className="button secondary"
-                href={config.links.localDashboard}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {config.trading.localLabel}
               </a>
             </div>
           </div>
@@ -563,6 +565,30 @@ function ProductTrading() {
               src={config.trading.heroImage}
               alt={config.trading.heroImageAlt}
             />
+          </div>
+        </div>
+
+        <div className="audience-panel reveal-on-scroll">
+          <p className="eyebrow">{config.trading.audience.eyebrow}</p>
+          <div className="audience-grid">
+            <div>
+              <h4>{config.trading.audience.idealTitle}</h4>
+              {config.trading.audience.ideal.map((item) => (
+                <span key={item}>
+                  <CheckCircle2 size={16} />
+                  {item}
+                </span>
+              ))}
+            </div>
+            <div>
+              <h4>{config.trading.audience.notTitle}</h4>
+              {config.trading.audience.notFor.map((item) => (
+                <span key={item}>
+                  <CheckCircle2 size={16} />
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -581,36 +607,31 @@ function ProductTrading() {
 
         <div className="stack-section reveal-on-scroll">
           <div className="section-intro narrow left">
-            <p className="eyebrow">Multi-brain consensus</p>
-            <h3>From user signal to one explainable decision.</h3>
-            <p>
-              Every request travels through specialist brains — technical, news, forecast, risk,
-              and portfolio — then lands in OKF consensus. Shared memory spans a relational store,
-              vector recall, and a relationship graph, so the final verdict is structured,
-              searchable, and clear.
-            </p>
+            <p className="eyebrow">{config.trading.stackIntro.eyebrow}</p>
+            <h3>{config.trading.stackIntro.title}</h3>
+            <p>{config.trading.stackIntro.body}</p>
           </div>
           <DecisionPipeline />
         </div>
 
         <div className="data-stack">
-          {config.trading.dataStack.map((item, index) => (
-            <article
-              className="data-card glass-panel reveal-on-scroll"
-              style={{ '--delay': `${index * 80}ms` } as CSSProperties}
-              key={item.name}
-            >
-              <div className="data-icon">
-                {item.id === 'relational' ? <Database size={20} /> : null}
-                {item.id === 'vector' ? <Network size={20} /> : null}
-                {item.id === 'graph' ? <GitBranch size={20} /> : null}
-                {item.id === 'okf' ? <Sparkles size={20} /> : null}
-              </div>
-              <p className="data-role">{item.role}</p>
-              <h4>{item.name}</h4>
-              <p>{item.copy}</p>
-            </article>
-          ))}
+          {config.trading.dataStack.map((item, index) => {
+            const Icon = stackIcons[item.id] ?? Sparkles;
+            return (
+              <article
+                className="data-card glass-panel reveal-on-scroll"
+                style={{ '--delay': `${index * 80}ms` } as CSSProperties}
+                key={item.name}
+              >
+                <div className="data-icon">
+                  <Icon size={20} />
+                </div>
+                <p className="data-role">{item.role}</p>
+                <h4>{item.name}</h4>
+                <p>{item.copy}</p>
+              </article>
+            );
+          })}
         </div>
 
         <div className="feature-grid">
@@ -732,7 +753,11 @@ function Footer() {
           <div className="footer-cta-block">
             <p className="eyebrow">{config.footer.eyebrow}</p>
             <h2>{config.footer.title}</h2>
-            <a className="footer-cta" href={ctaHref}>
+            <a
+              className="footer-cta"
+              href={ctaHref}
+              onClick={() => trackOutbound(config.footer.ctaLabel, ctaHref)}
+            >
               <Mail size={18} />
               {config.footer.ctaLabel}
               <ArrowRight size={16} />

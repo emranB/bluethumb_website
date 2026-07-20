@@ -8,6 +8,7 @@ Premium single-page React landing site for Bluethumb Technologies.
 - Site copy and links in [`config.json`](config.json)
 - Source images in [`asset/`](asset/); served images in [`public/images/`](public/images/)
 - Reusable `MediaFrame` / `.shot` window chrome for product screenshots (full image, no crop)
+- Google Analytics (`G-V221KK2B6V`) via `src/scripts/gtag.ts` — page views plus outbound/nav click events
 
 ## Local development
 

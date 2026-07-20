@@ -9,7 +9,6 @@
   "links": {
     "demo": "https://www.youtube.com/watch?v=me9PSxrPenY&t=118s",
     "tradingApp": "https://bluethumb-trading-app.pages.dev/",
-    "localDashboard": "http://127.0.0.1:8888",
     "contactEmail": "mailto:emran.billah@gmail.com",
     "linkedin": "https://www.linkedin.com/company/bluethumb-technologies"
   },
@@ -25,7 +24,7 @@
     "ctas": [
       { "label": "Explore Products", "href": "#products", "style": "primary" },
       { "label": "Watch Demo", "hrefKey": "demo", "style": "secondary", "external": true },
-      { "label": "Launch Trading Intelligence", "hrefKey": "tradingApp", "style": "ghost", "external": true }
+      { "label": "Open Bluethumb Trading Intelligence", "hrefKey": "tradingApp", "style": "ghost", "external": true }
     ],
     "dashboard": {
       "label": "Live intelligence",
@@ -117,147 +116,188 @@
   "trading": {
     "eyebrow": "Bluethumb Trading Intelligence",
     "title": "Professional-grade trading intelligence for self-directed investors.",
-    "lede": "Bluethumb is an AI-powered decision-support platform that watches the markets, reads the news, scores every symbol through dozens of intelligence layers, and explains its thinking in plain English.",
-    "paperFirst": "It runs in paper mode by default — you get the full experience without risking real capital until you choose to connect a broker.",
-    "committee": "Under the hood, Bluethumb is not one model guessing at the market. It is a committee of specialist brains — technical analysts, news readers, forecast engines, risk officers, and portfolio managers — that debate every symbol. Their outputs flow into OKF, the platform’s confidence engine: one time-aware ground truth per symbol. When the committee agrees, confidence rises; when sources contradict, confidence falls — and you see exactly why.",
-    "okf": {
-      "title": "OKF — Organized Knowledge Format",
-      "body": "OKF maintains one living knowledge record per symbol: technicals, news, forecasts, and multi-agent conclusions — each tagged with freshness, source trust, and explicit contradictions. Alignment raises confidence; disagreement lowers it."
+    "lede": "Built for people who trade on Wealthsimple, Questrade, and similar platforms — and want better information, not faster wires. Bluethumb watches live markets, scores every symbol through a full intelligence stack, and explains its thinking in plain English before you act.",
+    "paperFirst": "It runs in paper mode by default: full dashboard, alerts, forecasts, and simulated fills — with no real capital at risk until you explicitly connect a broker.",
+    "committee": "Under the hood this is a trading desk of specialists, not a single model guessing. Technicals, news, forecasts, risk, portfolio, and market memory each weigh in every few seconds. Agreement raises confidence; contradiction lowers it — and the dashboard shows you why.",
+    "audience": {
+      "eyebrow": "Who it's for",
+      "idealTitle": "Ideal for",
+      "ideal": [
+        "Self-directed investors who want clearer decision support",
+        "Traders who care about why a symbol looks attractive",
+        "Teams evaluating AI-assisted trading without enterprise budgets"
+      ],
+      "notTitle": "Not designed for",
+      "notFor": [
+        "Sub-millisecond HFT or market-making",
+        "Fully unattended live trading without oversight",
+        "Replacing a licensed financial advisor"
+      ]
     },
     "why": [
-      { "title": "News → signals", "copy": "Headlines are scored and tied to the symbols you care about." },
-      { "title": "Multi-layer confidence", "copy": "Buy/sell only when independent systems agree — not one black-box score." },
-      { "title": "Plain-English reasoning", "copy": "Every decision explained in language you can act on." },
-      { "title": "Walk-forward forecasts", "copy": "Price paths validated against real history — not static AI targets." },
-      { "title": "Paper-first safety", "copy": "Full dashboard and simulated fills before any live broker connection." },
-      { "title": "Three-currency book", "copy": "CAD stocks, USD stocks, and crypto each have their own wallet and P&L." }
+      {
+        "title": "News → signals",
+        "copy": "Trusted headlines are scored and linked to the symbols you actually hold or watch."
+      },
+      {
+        "title": "Multi-layer confidence",
+        "copy": "Buys and sells are considered only when independent systems agree — not one black-box score."
+      },
+      {
+        "title": "Specialist committee",
+        "copy": "Risk, portfolio, news, memory, and forecast agents fuse views before a trade is sized."
+      },
+      {
+        "title": "Plain-English reasoning",
+        "copy": "Every insight and fill comes with language you can act on — not opaque model output."
+      },
+      {
+        "title": "Walk-forward forecasts",
+        "copy": "Price paths validated against real history, from minutes to months ahead."
+      },
+      {
+        "title": "Paper-first safety",
+        "copy": "Full experience and simulated fills before any live broker connection."
+      },
+      {
+        "title": "Three-currency book",
+        "copy": "CAD, USD, and crypto each keep their own wallet, holdings, and P&L view."
+      },
+      {
+        "title": "You stay in control",
+        "copy": "Alerts and recommendations are decision support — the system suggests; you decide."
+      }
     ],
     "pipeline": {
-      "title": "Decision Pipeline",
-      "subtitle": "User signal flows through every specialist brain into one explainable decision.",
+      "title": "How information becomes a decision",
+      "subtitle": "One funnel from market noise to an explainable, paper-first action.",
       "stages": [
         {
-          "id": "user",
-          "title": "User Signal",
-          "subtitle": "Intent, portfolio context, and live market data",
-          "icon": "Users",
+          "id": "news",
+          "title": "News & headlines",
+          "subtitle": "Scored stories tied to your symbols",
+          "icon": "Newspaper",
           "tone": "cyan"
         },
         {
-          "id": "technical",
-          "title": "Technical Brain",
-          "subtitle": "Trend, momentum, and regime structure",
-          "icon": "LineChart",
+          "id": "events",
+          "title": "Events & alerts",
+          "subtitle": "Severity-ranked market intelligence",
+          "icon": "Sparkles",
           "tone": "blue"
         },
         {
-          "id": "news",
-          "title": "News Brain",
-          "subtitle": "Headline impact scored to symbols",
-          "icon": "Newspaper",
+          "id": "signals",
+          "title": "Per-symbol signals",
+          "subtitle": "Technicals blended with intelligence",
+          "icon": "LineChart",
           "tone": "violet"
         },
         {
-          "id": "forecast",
-          "title": "Forecast Brain",
-          "subtitle": "Walk-forward scenario paths",
-          "icon": "Sparkles",
+          "id": "committee",
+          "title": "Specialist committee",
+          "subtitle": "Risk, portfolio, memory, and more",
+          "icon": "Users",
           "tone": "green"
         },
         {
-          "id": "risk",
-          "title": "Risk & Portfolio Brains",
-          "subtitle": "Exposure, concentration, and safety limits",
-          "icon": "ShieldCheck",
+          "id": "confidence",
+          "title": "Confidence & forecast",
+          "subtitle": "Fused score, evidence, and path ahead",
+          "icon": "Network",
           "tone": "amber"
         },
         {
-          "id": "okf",
-          "title": "OKF Consensus",
-          "subtitle": "One ground-truth confidence record",
-          "icon": "Network",
-          "tone": "cyan"
-        },
-        {
           "id": "decision",
-          "title": "Decision",
-          "subtitle": "Explainable verdict — paper-first by default",
+          "title": "Your dashboard",
+          "subtitle": "Sized hint — paper fill by default",
           "icon": "CheckCircle2",
           "tone": "blue"
         }
       ]
     },
+    "stackIntro": {
+      "eyebrow": "Intelligence stack",
+      "title": "Many specialists. One coherent story per symbol.",
+      "body": "Layers run every few seconds. Later ones can scale or veto earlier ones. Alignment raises confidence; disagreement lowers it — so you see one clear picture, not conflicting silos."
+    },
     "dataStack": [
       {
-        "id": "relational",
-        "name": "Relational memory",
-        "role": "System of record",
-        "copy": "Trades, fills, configs, and durable session history — the auditable ledger behind every decision."
+        "id": "technical",
+        "name": "Chart & regime",
+        "role": "Structure",
+        "copy": "Trend, momentum, and market weather — is this symbol bullish, choppy, or risk-off?"
       },
       {
-        "id": "vector",
-        "name": "Vector memory",
-        "role": "Semantic recall",
-        "copy": "Finds similar news, reasoning snippets, and past setups so specialist brains can remember what worked."
+        "id": "news",
+        "name": "News & alerts",
+        "role": "Narrative",
+        "copy": "Headlines and events scored to tickers, with severity, source trust, and acknowledge controls."
       },
       {
-        "id": "graph",
-        "name": "Graph intelligence",
-        "role": "Relationships",
-        "copy": "Maps peers, supply chains, and who-moves-with-whom for correlated risk and opportunity."
+        "id": "forecast",
+        "name": "Walk-forward forecasts",
+        "role": "Forward view",
+        "copy": "Validated price paths and probabilities — trained only on history the model had not seen yet."
       },
       {
-        "id": "okf",
-        "name": "OKF consensus",
-        "role": "Ground truth",
-        "copy": "Fuses every brain into one confidence record with evidence, contradictions, and plain-English explanation."
+        "id": "committee",
+        "name": "Multi-agent council",
+        "role": "Debate",
+        "copy": "Portfolio, risk, graph, memory, and narrative agents publish views before any size is set."
+      },
+      {
+        "id": "fusion",
+        "name": "Confidence fusion",
+        "role": "Editor",
+        "copy": "Evidence is fused into one explainable confidence record — including contradictions and freshness."
+      },
+      {
+        "id": "safety",
+        "name": "Risk gates & paper fill",
+        "role": "Safety",
+        "copy": "Hard limits, pause controls, and simulated execution by default until you enable live trading."
       }
     ],
     "features": [
       {
-        "icon": "BrainCircuit",
-        "title": "AI Market Analysis",
-        "copy": "Understand market conditions through multiple intelligence layers."
-      },
-      {
         "icon": "Newspaper",
-        "title": "News Intelligence",
-        "copy": "See how events and headlines influence the symbols you follow."
+        "title": "Intelligence workspace",
+        "copy": "News, forecasts, drivers, scoreboard, graph, and live feed in one place."
       },
       {
-        "icon": "Sparkles",
-        "title": "Explainable Decisions",
-        "copy": "View the reasoning behind each insight — not just a score."
+        "icon": "BrainCircuit",
+        "title": "Live reasoning",
+        "copy": "See what the engine is considering symbol by symbol — and leave feedback."
       },
       {
         "icon": "LineChart",
-        "title": "Walk-forward Forecasting",
-        "copy": "Explore validated scenarios from minutes to months ahead."
+        "title": "Explainable trade history",
+        "copy": "Every fill includes P&L and a plain-English why."
       },
       {
         "icon": "WalletCards",
-        "title": "Portfolio Intelligence",
-        "copy": "Track Canadian investments, US investments, ETFs, and cryptocurrency."
+        "title": "CAD · USD · Crypto wallets",
+        "copy": "Segmented books that mirror how self-directed investors actually hold money."
       },
       {
         "icon": "ShieldCheck",
-        "title": "Risk Awareness",
-        "copy": "Keep opportunities and risks visible as conditions change."
+        "title": "Safety controls",
+        "copy": "Pause, emergency stop, safe mode, and deploy health checks built in."
       },
       {
         "icon": "LockKeyhole",
-        "title": "Paper-First Safety",
-        "copy": "Explore strategies and insights without risking real capital."
+        "title": "Paper-first by design",
+        "copy": "SIM mode is the default — no hidden live orders."
       }
     ],
-    "ctaLabel": "Open Production PWA",
-    "localLabel": "Local dashboard",
+    "ctaLabel": "Open Bluethumb Trading Intelligence",
     "heroImage": "/images/trading-dashboard.png",
     "heroImageAlt": "Bluethumb Trading Intelligence portfolio command center",
     "gallery": {
       "eyebrow": "Product tour",
-      "title": "Every surface of the trading app, captured from a live session.",
-      "body": "Portfolio health, forecasts, alerts, execution history, and explainable decisions — available as a Progressive Web App. Production: bluethumb-trading-app.pages.dev",
+      "title": "The surfaces investors use every session.",
+      "body": "Portfolio health, forecasts, alerts, trade history, and decision review — live in Bluethumb Trading Intelligence.",
       "items": [
         {
           "image": "/images/trading-dashboard.png",
@@ -277,24 +317,24 @@
         {
           "image": "/images/trading-trades-log.png",
           "title": "Explainable trade log",
-          "copy": "Every fill with side, size, P&L, cumulative profit, and the engine reason — friction, regime, score, and more."
+          "copy": "Every fill with side, size, P&L, cumulative profit, and the engine reason behind the action."
         },
         {
           "image": "/images/trading-decision-report.png",
           "title": "Decision report",
-          "copy": "Plain-English “why I bought” breakdowns: confidence, key factors, aggregation, and how each system voted."
+          "copy": "Plain-English breakdowns: confidence, key factors, and how each system voted."
         },
         {
           "image": "/images/trading-session.png",
           "title": "Session performance",
-          "copy": "Day-trader portfolio view with live engine status, session P&L, trade count, and win-rate at a glance."
+          "copy": "Live engine status, session P&L, trade count, and win rate at a glance."
         }
       ]
     },
     "reviewFlow": {
       "eyebrow": "AI trade review",
       "title": "Before you trade, see the fused recommendation.",
-      "body": "Review Buy walks a ticket through rating, confidence, odds, and every specialist vote — then recommends buy, sell, or wait with an optimal size.",
+      "body": "Review Buy walks a ticket through rating, confidence, odds, and specialist votes — then recommends buy, sell, or wait with an optimal size.",
       "steps": [
         {
           "image": "/images/trading-review-1.png",
@@ -312,7 +352,7 @@
           "image": "/images/trading-review-3.png",
           "label": "03 · Policy & risk",
           "title": "Validation to decision",
-          "copy": "Backtests, scenarios, risk guardrails, CIO themes, and adaptive alpha feed the final buy/sell/wait policy."
+          "copy": "Backtests, scenarios, risk guardrails, and adaptive layers feed the final buy/sell/wait policy."
         }
       ]
     }
