@@ -245,42 +245,73 @@
     ],
     "ctaLabel": "Open Production PWA",
     "localLabel": "Local dashboard",
-    "heroImage": "/images/trading-overview.png",
-    "heroImageAlt": "Bluethumb Trading Intelligence portfolio overview",
+    "heroImage": "/images/trading-dashboard.png",
+    "heroImageAlt": "Bluethumb Trading Intelligence portfolio command center",
     "gallery": {
-      "eyebrow": "Dashboard showcase",
-      "title": "Built for clarity across markets, portfolios, alerts, and forecasts.",
-      "body": "Available as a Progressive Web App on desktop and mobile. Production: bluethumb-trading-app.pages.dev",
+      "eyebrow": "Product tour",
+      "title": "Every surface of the trading app, captured from a live session.",
+      "body": "Portfolio health, forecasts, alerts, execution history, and explainable decisions — available as a Progressive Web App. Production: bluethumb-trading-app.pages.dev",
       "items": [
         {
-          "image": "/images/trading-overview.png",
-          "crop": "overview",
-          "title": "Market overview",
-          "copy": "CAD, USD, and crypto wallets with session P&L, win rate, and live engine status."
+          "image": "/images/trading-dashboard.png",
+          "crop": "cover",
+          "title": "Portfolio command center",
+          "copy": "CAD, USD, and crypto books with cash, holdings, unrealized P&L, session profit, and win rate in one live view."
         },
         {
           "image": "/images/trading-forecasts.png",
-          "crop": "forecasts",
-          "title": "Forecasts",
-          "copy": "Walk-forward paths, confidence bands, and plain-English model reasoning."
+          "crop": "cover",
+          "title": "Forecast cards",
+          "copy": "Per-symbol BUY/SELL outlooks with walk-forward paths, confidence, expected move, and probability of upside."
         },
         {
           "image": "/images/trading-alerts.png",
-          "crop": "alerts",
-          "title": "Alerts",
-          "copy": "Severity-ranked headlines linked to symbols with source and confidence."
+          "crop": "cover",
+          "title": "Intelligence alerts",
+          "copy": "Severity-ranked market and news signals tied to symbols, sources, confidence, and one-click acknowledgment."
         },
         {
-          "image": "/images/trading-symbols.png",
-          "crop": "symbols",
-          "title": "Portfolio intelligence",
-          "copy": "Per-symbol P&L bars across Canadian and US books."
+          "image": "/images/trading-trades-log.png",
+          "crop": "cover",
+          "title": "Explainable trade log",
+          "copy": "Every fill with side, size, P&L, cumulative profit, and the engine reason — friction, regime, score, and more."
         },
         {
-          "image": "/images/trading-performance.png",
-          "crop": "performance",
-          "title": "Performance",
-          "copy": "Top and worst performers with realized and unrealized gains."
+          "image": "/images/trading-decision-report.png",
+          "crop": "cover",
+          "title": "Decision report",
+          "copy": "Plain-English “why I bought” breakdowns: confidence, key factors, aggregation, and how each system voted."
+        },
+        {
+          "image": "/images/trading-session.png",
+          "crop": "cover",
+          "title": "Session performance",
+          "copy": "Day-trader portfolio view with live engine status, session P&L, trade count, and win-rate at a glance."
+        }
+      ]
+    },
+    "reviewFlow": {
+      "eyebrow": "AI trade review",
+      "title": "Before you trade, see the fused recommendation.",
+      "body": "Review Buy walks a ticket through rating, confidence, odds, and every specialist vote — then recommends buy, sell, or wait with an optimal size.",
+      "steps": [
+        {
+          "image": "/images/trading-review-1.png",
+          "label": "01 · Consensus",
+          "title": "Fused outlook",
+          "copy": "AI rating, confidence, favorable odds, and a final HOLD/BUY/SELL consensus with an optimal ticket."
+        },
+        {
+          "image": "/images/trading-review-2.png",
+          "label": "02 · System votes",
+          "title": "How each brain voted",
+          "copy": "Technical, news, alerts, profile, memory, and forecast systems each cast a weighted vote with live reasoning."
+        },
+        {
+          "image": "/images/trading-review-3.png",
+          "label": "03 · Policy & risk",
+          "title": "Validation to decision",
+          "copy": "Backtests, scenarios, risk guardrails, CIO themes, and adaptive alpha feed the final buy/sell/wait policy."
         }
       ]
     }

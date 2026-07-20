@@ -507,7 +507,7 @@ function ProductTrading() {
             </div>
           </div>
           <div className="trading-hero-card glass-panel reveal-on-scroll">
-            <div className="shot-frame crop-overview">
+            <div className="shot-frame crop-cover">
               <img src={config.trading.heroImage} alt={config.trading.heroImageAlt} />
             </div>
           </div>
@@ -592,6 +592,28 @@ function ProductTrading() {
                 <div>
                   <h4>{item.title}</h4>
                   <p>{item.copy}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="review-flow reveal-on-scroll">
+          <div className="section-intro narrow">
+            <p className="eyebrow">{config.trading.reviewFlow.eyebrow}</p>
+            <h3>{config.trading.reviewFlow.title}</h3>
+            <p>{config.trading.reviewFlow.body}</p>
+          </div>
+          <div className="review-flow-steps">
+            {config.trading.reviewFlow.steps.map((step) => (
+              <article className="review-flow-card glass-panel" key={step.title}>
+                <div className="shot-frame crop-cover review-shot">
+                  <img src={step.image} alt={`${config.brand.name} ${step.title}`} />
+                </div>
+                <div className="review-flow-copy">
+                  <p className="review-step-label">{step.label}</p>
+                  <h4>{step.title}</h4>
+                  <p>{step.copy}</p>
                 </div>
               </article>
             ))}
