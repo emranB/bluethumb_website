@@ -1,5 +1,6 @@
 import {
   ArrowRight,
+  ArrowUp,
   BrainCircuit,
   CheckCircle2,
   Database,
@@ -8,6 +9,7 @@ import {
   Layers3,
   LineChart,
   LockKeyhole,
+  Mail,
   Network,
   Newspaper,
   Play,
@@ -720,36 +722,66 @@ function Mission() {
 }
 
 function Footer() {
+  const year = new Date().getFullYear();
+  const ctaHref = resolveHref(undefined, config.footer.ctaHrefKey);
+
   return (
     <footer className="site-footer page" id="contact">
-      <div>
-        <a className="brand-mark" href="#top" aria-label={`${config.brand.name} home`}>
-          <span className="brand-icon">
-            <img src={config.brand.logo} alt="" />
-          </span>
-          <span className="wordmark">
-            <span className="wordmark-name">{config.brand.wordmark[0]}</span>
-            <span className="wordmark-sub">{config.brand.wordmark[1]}</span>
-          </span>
-        </a>
-        <p>{config.brand.tagline}</p>
-      </div>
-      <nav aria-label="Footer navigation">
-        {config.footer.links.map((item) => {
-          const href = resolveHref(item.href, item.hrefKey);
-          const isExternal = Boolean(item.external) || href.startsWith('http');
-          return (
-            <a
-              key={item.label}
-              href={href}
-              target={isExternal ? '_blank' : undefined}
-              rel={isExternal ? 'noreferrer' : undefined}
-            >
-              {item.label}
+      <div className="footer-shell">
+        <div className="footer-panel">
+          <div className="footer-cta-block">
+            <p className="eyebrow">{config.footer.eyebrow}</p>
+            <h2>{config.footer.title}</h2>
+            <a className="footer-cta" href={ctaHref}>
+              <Mail size={18} />
+              {config.footer.ctaLabel}
+              <ArrowRight size={16} />
             </a>
-          );
-        })}
-      </nav>
+          </div>
+
+          <div className="footer-columns">
+            {config.footer.columns.map((column) => (
+              <nav key={column.title} aria-label={column.title}>
+                <h3>{column.title}</h3>
+                {column.links.map((item) => {
+                  const href = resolveHref(item.href, item.hrefKey);
+                  const isExternal = Boolean(item.external) || href.startsWith('http');
+                  return (
+                    <a
+                      key={item.label}
+                      href={href}
+                      target={isExternal ? '_blank' : undefined}
+                      rel={isExternal ? 'noreferrer' : undefined}
+                    >
+                      {item.label}
+                    </a>
+                  );
+                })}
+              </nav>
+            ))}
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <a className="brand-mark" href="#top" aria-label={`${config.brand.name} home`}>
+            <span className="brand-icon">
+              <img src={config.brand.logo} alt="" />
+            </span>
+            <span className="wordmark">
+              <span className="wordmark-name">{config.brand.wordmark[0]}</span>
+              <span className="wordmark-sub">{config.brand.wordmark[1]}</span>
+            </span>
+          </a>
+          <p className="footer-note">{config.footer.note}</p>
+          <div className="footer-meta">
+            <span>© {year} {config.brand.name}</span>
+            <a className="footer-top-link" href="#top">
+              Back to top
+              <ArrowUp size={14} />
+            </a>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 }

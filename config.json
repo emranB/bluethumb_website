@@ -324,11 +324,27 @@
     "statement": "Build technology that helps people make better decisions."
   },
   "footer": {
-    "links": [
-      { "label": "Blueprint Loyalty Program", "href": "#blueprint" },
-      { "label": "Bluethumb Trading Intelligence", "href": "#trading" },
-      { "label": "LinkedIn", "hrefKey": "linkedin", "external": true },
-      { "label": "Contact", "hrefKey": "contactEmail" }
-    ]
+    "eyebrow": "Contact",
+    "title": "Ready to talk products, partnerships, or a demo?",
+    "ctaLabel": "Email Bluethumb",
+    "ctaHrefKey": "contactEmail",
+    "columns": [
+      {
+        "title": "Products",
+        "links": [
+          { "label": "Blueprint Loyalty", "href": "#blueprint" },
+          { "label": "Trading Intelligence", "href": "#trading" }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          { "label": "Mission", "href": "#mission" },
+          { "label": "LinkedIn", "hrefKey": "linkedin", "external": true },
+          { "label": "Email", "hrefKey": "contactEmail" }
+        ]
+      }
+    ],
+    "note": "Financial technology that connects communities and empowers smarter decisions."
   }
 }
