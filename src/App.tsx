@@ -2,7 +2,6 @@ import {
   ArrowRight,
   BrainCircuit,
   CheckCircle2,
-  CircleDollarSign,
   Database,
   GitBranch,
   HeartHandshake,
@@ -35,7 +34,6 @@ const icons: Record<string, LucideIcon> = {
   ArrowRight,
   BrainCircuit,
   CheckCircle2,
-  CircleDollarSign,
   Database,
   GitBranch,
   HeartHandshake,
@@ -298,37 +296,85 @@ function About() {
   );
 }
 
+function MediaFrame({
+  src,
+  alt,
+  ratio = 'standard',
+  className = '',
+}: {
+  src: string;
+  alt: string;
+  ratio?: 'standard' | 'wide' | 'review';
+  className?: string;
+}) {
+  return (
+    <div className={`media-frame ${className}`.trim()}>
+      <div className={`media-frame__viewport media-frame__viewport--${ratio}`}>
+        <img className="media-frame__img" src={src} alt={alt} />
+      </div>
+    </div>
+  );
+}
+
 function BlueprintMockup() {
   const mockup = config.blueprint.mockup;
 
   return (
-    <div className="phone-stage" aria-label="Blueprint loyalty mobile app concept">
-      <div className="phone-frame">
-        <div className="phone-top">
-          <span>{mockup.product}</span>
-          <b>{mockup.tier}</b>
+    <div className="blueprint-panel glass-panel" aria-label="Blueprint loyalty network concept">
+      <div className="blueprint-panel__head">
+        <div>
+          <p className="eyebrow">{mockup.eyebrow}</p>
+          <h4>{mockup.headline}</h4>
         </div>
-        <div className="points-card">
-          <small>{mockup.pointsLabel}</small>
-          <strong>{mockup.points}</strong>
-          <span>{mockup.delta}</span>
-        </div>
-        <div className="reward-list">
-          {mockup.activity.map((item) => {
-            const Icon = icons[item.icon] ?? ShoppingBag;
+        <span className="blueprint-status">
+          <span className="live-dot" />
+          {mockup.status}
+        </span>
+      </div>
+
+      <div className="blueprint-metrics">
+        {mockup.metrics.map((metric) => (
+          <div key={metric.label}>
+            <strong>{metric.value}</strong>
+            <span>{metric.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className="blueprint-loop">
+        <p className="blueprint-kicker">{mockup.loopTitle}</p>
+        <div className="blueprint-loop__grid">
+          {mockup.loop.map((item) => {
+            const Icon = icons[item.icon] ?? Sparkles;
             return (
-              <div key={item.label}>
-                <Icon size={16} />
-                <span>{item.label}</span>
-                <b>{item.value}</b>
+              <div key={item.title}>
+                <Icon size={18} />
+                <strong>{item.title}</strong>
+                <p>{item.copy}</p>
               </div>
             );
           })}
         </div>
-        <div className="impact-meter">
-          <span>{mockup.impactLabel}</span>
-          <b>{mockup.impact}</b>
+      </div>
+
+      <div className="blueprint-partners">
+        <p className="blueprint-kicker">{mockup.partnersTitle}</p>
+        <div className="blueprint-partners__row">
+          {mockup.partners.map((partner) => (
+            <span key={partner}>{partner}</span>
+          ))}
         </div>
+      </div>
+
+      <div className="blueprint-fund">
+        <div className="blueprint-fund__meta">
+          <span>{mockup.fundLabel}</span>
+          <b>{mockup.fundValue}</b>
+        </div>
+        <div className="blueprint-fund__track" aria-hidden="true">
+          <span style={{ width: mockup.fundValue }} />
+        </div>
+        <p>{mockup.fundNote}</p>
       </div>
     </div>
   );
@@ -507,9 +553,11 @@ function ProductTrading() {
             </div>
           </div>
           <div className="trading-hero-card glass-panel reveal-on-scroll">
-            <div className="shot-frame crop-cover">
-              <img src={config.trading.heroImage} alt={config.trading.heroImageAlt} />
-            </div>
+            <MediaFrame
+              src={config.trading.heroImage}
+              alt={config.trading.heroImageAlt}
+              ratio="wide"
+            />
           </div>
         </div>
 
@@ -584,11 +632,13 @@ function ProductTrading() {
             <p>{config.trading.gallery.body}</p>
           </div>
           <div className="gallery-grid">
-            {config.trading.gallery.items.map((item) => (
+            {config.trading.gallery.items.map((item, index) => (
               <article className="gallery-card glass-panel" key={item.title}>
-                <div className={`shot-frame crop-${item.crop}`}>
-                  <img src={item.image} alt={`${config.brand.name} ${item.title}`} />
-                </div>
+                <MediaFrame
+                  src={item.image}
+                  alt={`${config.brand.name} ${item.title}`}
+                  ratio={index === 0 ? 'wide' : 'standard'}
+                />
                 <div>
                   <h4>{item.title}</h4>
                   <p>{item.copy}</p>
@@ -607,9 +657,11 @@ function ProductTrading() {
           <div className="review-flow-steps">
             {config.trading.reviewFlow.steps.map((step) => (
               <article className="review-flow-card glass-panel" key={step.title}>
-                <div className="shot-frame crop-cover review-shot">
-                  <img src={step.image} alt={`${config.brand.name} ${step.title}`} />
-                </div>
+                <MediaFrame
+                  src={step.image}
+                  alt={`${config.brand.name} ${step.title}`}
+                  ratio="review"
+                />
                 <div className="review-flow-copy">
                   <p className="review-step-label">{step.label}</p>
                   <h4>{step.title}</h4>

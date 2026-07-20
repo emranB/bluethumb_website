@@ -615,8 +615,7 @@ a {
 }
 
 .dashboard-head,
-.signal-grid,
-.impact-meter {
+.signal-grid {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -624,8 +623,7 @@ a {
 
 .dashboard-head span,
 .ticker-list span,
-.signal-grid small,
-.impact-meter span {
+.signal-grid small {
   color: var(--muted);
 }
 
@@ -820,12 +818,6 @@ a {
   color: var(--cyan);
 }
 
-.points-card strong,
-.reward-list svg,
-.reward-list b {
-  color: var(--cyan);
-}
-
 .focus-card svg,
 .feature-card svg,
 .okf-panel svg,
@@ -864,96 +856,189 @@ a {
   line-height: 1.5;
 }
 
-.phone-stage {
-  display: grid;
-  place-items: center;
-  min-height: 540px;
-  border-radius: var(--radius-lg);
-  background:
-    radial-gradient(circle at 50% 22%, rgba(46, 230, 255, 0.16), transparent 16rem),
-    radial-gradient(circle at 68% 80%, rgba(31, 111, 255, 0.12), transparent 18rem);
+.blueprint-panel {
+  width: min(100%, 460px);
+  margin: 0 auto;
+  padding: 24px;
+  animation: floatCard 7s ease-in-out infinite alternate;
 }
 
-.phone-frame {
-  width: min(100%, 355px);
-  padding: 18px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  background: var(--surface);
-  box-shadow: var(--shadow);
-  animation: floatCard 6.5s ease-in-out infinite alternate;
-}
-
-.phone-top,
-.points-card,
-.reward-list div {
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.04);
-}
-
-.phone-top {
+.blueprint-panel__head {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  padding: 14px 16px;
+  gap: 16px;
+  margin-bottom: 22px;
 }
 
-.phone-top b {
-  color: var(--cyan);
+.blueprint-panel__head .eyebrow {
+  margin-bottom: 10px;
 }
 
-.points-card {
-  margin: 16px 0;
-  padding: 20px;
-  background: linear-gradient(135deg, rgba(46, 230, 255, 0.14), rgba(31, 111, 255, 0.1));
+.blueprint-panel__head h4 {
+  margin: 0;
+  max-width: 18ch;
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+  letter-spacing: -0.04em;
+  line-height: 1.2;
 }
 
-.points-card small,
-.points-card span {
+.blueprint-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 8px 12px 8px 28px;
+  position: relative;
+  border: 1px solid rgba(46, 230, 255, 0.28);
+  border-radius: var(--radius-sm);
+  background: rgba(8, 36, 56, 0.55);
+  color: #bdf8ff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.blueprint-status .live-dot {
+  left: 10px;
+}
+
+.blueprint-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.blueprint-metrics div {
+  padding: 14px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.blueprint-metrics strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--cyan-soft);
+  font-family: 'Syne', sans-serif;
+  font-size: 1.35rem;
+  letter-spacing: -0.03em;
+}
+
+.blueprint-metrics span,
+.blueprint-kicker,
+.blueprint-fund p,
+.blueprint-loop p {
   color: var(--muted);
 }
 
-.points-card strong {
-  display: block;
-  margin: 8px 0;
-  color: var(--cyan);
-  font-family: 'Syne', sans-serif;
-  font-size: 2.6rem;
+.blueprint-metrics span,
+.blueprint-kicker {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.reward-list {
+.blueprint-kicker {
+  margin: 0 0 12px;
+}
+
+.blueprint-loop {
+  margin-bottom: 20px;
+}
+
+.blueprint-loop__grid {
   display: grid;
   gap: 10px;
 }
 
-.reward-list div {
+.blueprint-loop__grid div {
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 10px;
+  grid-template-columns: 28px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 10px;
+  row-gap: 4px;
   padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.03);
 }
 
-.reward-list svg,
-.reward-list b {
+.blueprint-loop__grid svg {
+  grid-row: 1 / span 2;
+  align-self: center;
   color: var(--cyan);
 }
 
-.impact-meter {
-  position: relative;
-  margin-top: 18px;
-  padding-top: 22px;
+.blueprint-loop__grid strong {
+  font-size: 0.95rem;
 }
 
-.impact-meter::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 68%;
-  height: 5px;
+.blueprint-loop__grid p {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.blueprint-partners {
+  margin-bottom: 20px;
+}
+
+.blueprint-partners__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.blueprint-partners__row span {
+  padding: 8px 12px;
+  border: 1px solid rgba(100, 170, 230, 0.18);
+  border-radius: var(--radius-sm);
+  background: rgba(8, 28, 58, 0.55);
+  color: #cfe4f8;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.blueprint-fund__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.blueprint-fund__meta b {
+  color: #eff7ff;
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+}
+
+.blueprint-fund__track {
+  height: 8px;
+  margin-bottom: 10px;
+  overflow: hidden;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--cyan), var(--blue));
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.blueprint-fund__track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--grad-cta);
+}
+
+.blueprint-fund p {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.5;
 }
 
 .okf-panel {
@@ -974,35 +1059,49 @@ a {
   box-shadow: 0 28px 70px rgba(31, 111, 255, 0.28);
 }
 
-.shot-frame {
-  overflow: hidden;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  background: #070d18;
+/* Reusable screenshot frame: inset padding so hover zoom never clips corners */
+.media-frame {
+  padding: 12px;
+  background:
+    linear-gradient(180deg, rgba(10, 24, 48, 0.72), rgba(4, 12, 28, 0.9));
 }
 
-.shot-frame img {
+.media-frame__viewport {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border: 1px solid rgba(100, 170, 230, 0.14);
+  border-radius: calc(var(--radius-lg) - 8px);
+  background: #070d18;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.media-frame__viewport--standard {
+  aspect-ratio: 16 / 10;
+}
+
+.media-frame__viewport--wide {
+  aspect-ratio: 21 / 10;
+}
+
+.media-frame__viewport--review {
+  aspect-ratio: 16 / 11;
+}
+
+.media-frame__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top center;
-  transform-origin: center;
-  transition: transform 500ms ease;
+  transform-origin: center top;
+  transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.gallery-card:hover .shot-frame img,
-.trading-hero-card:hover .shot-frame img,
-.review-flow-card:hover .shot-frame img {
-  transform: scale(1.03);
-}
-
-.crop-cover img {
-  object-fit: cover;
-  object-position: top center;
-}
-
-.review-shot {
-  aspect-ratio: 16 / 11;
+.media-frame:hover .media-frame__img,
+.gallery-card:hover .media-frame__img,
+.trading-hero-card:hover .media-frame__img,
+.review-flow-card:hover .media-frame__img {
+  transform: scale(1.04);
 }
 
 .why-grid {
@@ -1244,10 +1343,6 @@ a {
 
 .gallery-card:first-child {
   grid-column: span 6;
-}
-
-.gallery-card:first-child .shot-frame {
-  aspect-ratio: 21 / 9;
 }
 
 .gallery-card div:last-child {
@@ -1784,9 +1879,18 @@ a {
     margin-top: 32px;
   }
 
-  .phone-stage {
-    min-height: 420px;
-    margin-top: 12px;
+  .blueprint-panel {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .blueprint-panel__head {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .blueprint-metrics {
+    grid-template-columns: 1fr;
   }
 
   .why-grid,

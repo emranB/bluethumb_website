@@ -7,6 +7,7 @@ Premium single-page React landing site for Bluethumb Technologies.
 - React + Vite + TypeScript
 - Site copy and links in [`config.json`](config.json)
 - Source images in [`asset/`](asset/); served images in [`public/images/`](public/images/)
+- Reusable `MediaFrame` component for padded product screenshots (hero, gallery, review flow)
 
 ## Local development
 
@@ -29,7 +30,9 @@ Dev server (hot reload): `npm run dev`
 
 ## Configuration
 
-Edit [`config.json`](config.json) for brand copy, product content, gallery captions, and links (including LinkedIn and contact email).
+Edit [`config.json`](config.json) for brand copy, product content, gallery captions, Blueprint network mockup, AI trade review steps, and links (including LinkedIn and contact email).
+
+Trading screenshots live under `public/images/trading-*.png` (sourced from `asset/images/picks/`). The Review Buy trio (`trading-review-1..3`) is one grouped section, not separate gallery cards.
 
 ## Docker (optional)
 

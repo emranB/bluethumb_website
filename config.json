@@ -93,18 +93,25 @@
       { "label": "LinkedIn", "hrefKey": "linkedin", "external": true }
     ],
     "mockup": {
-      "product": "Blueprint",
-      "tier": "Gold",
-      "pointsLabel": "Community Points",
-      "points": "24,850",
-      "delta": "+340 this week",
-      "impactLabel": "Community impact",
-      "impact": "68%",
-      "activity": [
-        { "icon": "ShoppingBag", "label": "Fresh Market Co.", "value": "+180" },
-        { "icon": "CircleDollarSign", "label": "Urban Coffee", "value": "+45" },
-        { "icon": "Users", "label": "Community Pharmacy", "value": "+220" }
-      ]
+      "eyebrow": "Blueprint Network",
+      "status": "Live in market",
+      "headline": "Local spend that comes back as loyalty and community impact.",
+      "metrics": [
+        { "label": "Active members", "value": "12.4k" },
+        { "label": "Partner retailers", "value": "186" },
+        { "label": "Visit lift", "value": "+18%" }
+      ],
+      "loopTitle": "How value moves",
+      "loop": [
+        { "icon": "ShoppingBag", "title": "Shop local", "copy": "Members earn at neighborhood retailers." },
+        { "icon": "WalletCards", "title": "Unlock rewards", "copy": "Points convert into offers that bring people back." },
+        { "icon": "HeartHandshake", "title": "Fund impact", "copy": "A share of activity supports community outcomes." }
+      ],
+      "partnersTitle": "Neighborhood partners",
+      "partners": ["Harbor Grocer", "Northside Pharmacy", "Atlas Coffee", "River Books"],
+      "fundLabel": "Community fund this month",
+      "fundValue": "72%",
+      "fundNote": "$28.6k toward local programs"
     }
   },
   "trading": {
@@ -254,37 +261,31 @@
       "items": [
         {
           "image": "/images/trading-dashboard.png",
-          "crop": "cover",
           "title": "Portfolio command center",
           "copy": "CAD, USD, and crypto books with cash, holdings, unrealized P&L, session profit, and win rate in one live view."
         },
         {
           "image": "/images/trading-forecasts.png",
-          "crop": "cover",
           "title": "Forecast cards",
           "copy": "Per-symbol BUY/SELL outlooks with walk-forward paths, confidence, expected move, and probability of upside."
         },
         {
           "image": "/images/trading-alerts.png",
-          "crop": "cover",
           "title": "Intelligence alerts",
           "copy": "Severity-ranked market and news signals tied to symbols, sources, confidence, and one-click acknowledgment."
         },
         {
           "image": "/images/trading-trades-log.png",
-          "crop": "cover",
           "title": "Explainable trade log",
           "copy": "Every fill with side, size, P&L, cumulative profit, and the engine reason — friction, regime, score, and more."
         },
         {
           "image": "/images/trading-decision-report.png",
-          "crop": "cover",
           "title": "Decision report",
           "copy": "Plain-English “why I bought” breakdowns: confidence, key factors, aggregation, and how each system voted."
         },
         {
           "image": "/images/trading-session.png",
-          "crop": "cover",
           "title": "Session performance",
           "copy": "Day-trader portfolio view with live engine status, session P&L, trade count, and win-rate at a glance."
         }
