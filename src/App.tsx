@@ -303,13 +303,20 @@ function About() {
 function MediaFrame({
   src,
   alt,
+  kicker,
+  title,
+  caption,
   className = '',
 }: {
   src: string;
   alt: string;
-  ratio?: 'standard' | 'wide' | 'review';
+  kicker?: string;
+  title?: string;
+  caption?: string;
   className?: string;
 }) {
+  const hasCaption = Boolean(kicker || title || caption);
+
   return (
     <figure className={`shot ${className}`.trim()}>
       <div className="shot__chrome" aria-hidden="true">
@@ -320,6 +327,13 @@ function MediaFrame({
       <div className="shot__stage">
         <img className="shot__img" src={src} alt={alt} loading="lazy" />
       </div>
+      {hasCaption ? (
+        <figcaption className="shot__caption">
+          {kicker ? <span className="shot__kicker">{kicker}</span> : null}
+          {title ? <strong className="shot__title">{title}</strong> : null}
+          {caption ? <p className="shot__text">{caption}</p> : null}
+        </figcaption>
+      ) : null}
     </figure>
   );
 }
@@ -528,6 +542,9 @@ function ProductTrading() {
             <MediaFrame
               src={config.trading.heroImage}
               alt={config.trading.heroImageAlt}
+              kicker="Live product"
+              title={config.trading.heroCaptionTitle}
+              caption={config.trading.heroCaption}
             />
           </div>
         </div>
@@ -622,16 +639,15 @@ function ProductTrading() {
             <p>{config.trading.gallery.body}</p>
           </div>
           <div className="gallery-grid">
-            {config.trading.gallery.items.map((item) => (
+            {config.trading.gallery.items.map((item, index) => (
               <article className="gallery-card" key={item.title}>
                 <MediaFrame
                   src={item.image}
                   alt={`${config.brand.name} ${item.title}`}
+                  kicker={`View 0${index + 1}`}
+                  title={item.title}
+                  caption={item.copy}
                 />
-                <div className="gallery-card__copy">
-                  <h4>{item.title}</h4>
-                  <p>{item.copy}</p>
-                </div>
               </article>
             ))}
           </div>
@@ -649,12 +665,10 @@ function ProductTrading() {
                 <MediaFrame
                   src={step.image}
                   alt={`${config.brand.name} ${step.title}`}
+                  kicker={step.label}
+                  title={step.title}
+                  caption={step.copy}
                 />
-                <div className="review-flow-copy">
-                  <p className="review-step-label">{step.label}</p>
-                  <h4>{step.title}</h4>
-                  <p>{step.copy}</p>
-                </div>
               </article>
             ))}
           </div>

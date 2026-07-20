@@ -296,6 +296,8 @@
     "ctaLabel": "Open Bluethumb Trading Intelligence",
     "heroImage": "/images/trading-dashboard.png",
     "heroImageAlt": "Bluethumb Trading Intelligence portfolio command center",
+    "heroCaptionTitle": "Your portfolio at a glance",
+    "heroCaption": "Cash, holdings, and session performance across Canadian, U.S., and crypto books — in one calm command center.",
     "gallery": {
       "eyebrow": "Product tour",
       "title": "The views you’ll use every day.",
@@ -309,7 +311,7 @@
         {
           "image": "/images/trading-forecasts.png",
           "title": "Forecast cards",
-          "copy": "Review outlooks with confidence, expected move, and a clear forward path."
+          "copy": "Review outlooks with confidence, expected move, and a clear forward path for each symbol."
         },
         {
           "image": "/images/trading-alerts.png",
@@ -324,7 +326,7 @@
         {
           "image": "/images/trading-decision-report.png",
           "title": "Decision report",
-          "copy": "Understand confidence, key factors, and how perspectives came together."
+          "copy": "Understand confidence, key factors, and how perspectives came together on a trade."
         },
         {
           "image": "/images/trading-session.png",
@@ -340,19 +342,19 @@
       "steps": [
         {
           "image": "/images/trading-review-1.png",
-          "label": "01 · Consensus",
+          "label": "Step 01 · Consensus",
           "title": "Fused outlook",
           "copy": "Rating, confidence, odds, and a clear final recommendation with an optimal ticket."
         },
         {
           "image": "/images/trading-review-2.png",
-          "label": "02 · Perspectives",
+          "label": "Step 02 · Perspectives",
           "title": "How each view contributed",
           "copy": "Technical, news, alerts, profile, memory, and forecast perspectives each share their vote."
         },
         {
           "image": "/images/trading-review-3.png",
-          "label": "03 · Policy & risk",
+          "label": "Step 03 · Policy & risk",
           "title": "From evidence to decision",
           "copy": "Validation, scenarios, and risk guardrails shape the final buy, sell, or wait policy."
         }
