@@ -299,7 +299,6 @@ function About() {
 function MediaFrame({
   src,
   alt,
-  ratio = 'standard',
   className = '',
 }: {
   src: string;
@@ -308,11 +307,16 @@ function MediaFrame({
   className?: string;
 }) {
   return (
-    <div className={`media-frame ${className}`.trim()}>
-      <div className={`media-frame__viewport media-frame__viewport--${ratio}`}>
-        <img className="media-frame__img" src={src} alt={alt} />
+    <figure className={`shot ${className}`.trim()}>
+      <div className="shot__chrome" aria-hidden="true">
+        <span />
+        <span />
+        <span />
       </div>
-    </div>
+      <div className="shot__stage">
+        <img className="shot__img" src={src} alt={alt} loading="lazy" />
+      </div>
+    </figure>
   );
 }
 
@@ -552,11 +556,10 @@ function ProductTrading() {
               </a>
             </div>
           </div>
-          <div className="trading-hero-card glass-panel reveal-on-scroll">
+          <div className="trading-hero-card reveal-on-scroll">
             <MediaFrame
               src={config.trading.heroImage}
               alt={config.trading.heroImageAlt}
-              ratio="wide"
             />
           </div>
         </div>
@@ -632,14 +635,13 @@ function ProductTrading() {
             <p>{config.trading.gallery.body}</p>
           </div>
           <div className="gallery-grid">
-            {config.trading.gallery.items.map((item, index) => (
-              <article className="gallery-card glass-panel" key={item.title}>
+            {config.trading.gallery.items.map((item) => (
+              <article className="gallery-card" key={item.title}>
                 <MediaFrame
                   src={item.image}
                   alt={`${config.brand.name} ${item.title}`}
-                  ratio={index === 0 ? 'wide' : 'standard'}
                 />
-                <div>
+                <div className="gallery-card__copy">
                   <h4>{item.title}</h4>
                   <p>{item.copy}</p>
                 </div>
@@ -656,11 +658,10 @@ function ProductTrading() {
           </div>
           <div className="review-flow-steps">
             {config.trading.reviewFlow.steps.map((step) => (
-              <article className="review-flow-card glass-panel" key={step.title}>
+              <article className="review-flow-card" key={step.title}>
                 <MediaFrame
                   src={step.image}
                   alt={`${config.brand.name} ${step.title}`}
-                  ratio="review"
                 />
                 <div className="review-flow-copy">
                   <p className="review-step-label">{step.label}</p>

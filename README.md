@@ -7,7 +7,7 @@ Premium single-page React landing site for Bluethumb Technologies.
 - React + Vite + TypeScript
 - Site copy and links in [`config.json`](config.json)
 - Source images in [`asset/`](asset/); served images in [`public/images/`](public/images/)
-- Reusable `MediaFrame` component for padded product screenshots (hero, gallery, review flow)
+- Reusable `MediaFrame` / `.shot` window chrome for product screenshots (full image, no crop)
 
 ## Local development
 

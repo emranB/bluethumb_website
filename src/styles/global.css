@@ -590,8 +590,7 @@ a {
 .focus-card:hover,
 .feature-card:hover,
 .why-card:hover,
-.data-card:hover,
-.gallery-card:hover {
+.data-card:hover {
   transform: translateY(-4px);
   border-color: rgba(46, 230, 255, 0.28);
   box-shadow: 0 18px 48px rgba(20, 70, 160, 0.24);
@@ -600,8 +599,7 @@ a {
 .focus-card:hover::before,
 .feature-card:hover::before,
 .why-card:hover::before,
-.data-card:hover::before,
-.gallery-card:hover::before {
+.data-card:hover::before {
   opacity: 1;
 }
 
@@ -1049,59 +1047,90 @@ a {
 }
 
 .trading-hero-card {
-  overflow: hidden;
-  transform: perspective(1100px) rotateY(-4deg) rotateX(3deg);
-  transition: transform 400ms ease, box-shadow 400ms ease;
+  transition: transform 400ms ease;
 }
 
 .trading-hero-card:hover {
-  transform: perspective(1100px) rotateY(-1deg) rotateX(1deg) translateY(-6px);
+  transform: translateY(-4px);
+}
+
+.trading-hero-card .shot {
+  transform: perspective(1100px) rotateY(-3deg) rotateX(2deg);
+  transition:
+    transform 400ms ease,
+    border-color 240ms ease,
+    box-shadow 400ms ease;
+}
+
+.trading-hero-card:hover .shot {
+  transform: perspective(1100px) rotateY(-1deg) rotateX(1deg) translateY(-4px);
+  border-color: rgba(46, 230, 255, 0.28);
   box-shadow: 0 28px 70px rgba(31, 111, 255, 0.28);
 }
 
-/* Reusable screenshot frame: inset padding so hover zoom never clips corners */
-.media-frame {
-  padding: 12px;
+/* App-window screenshot: full image visible, no crop / no hover clip */
+.shot {
+  margin: 0;
+  border: 1px solid rgba(120, 180, 230, 0.2);
+  border-radius: var(--radius-lg);
   background:
-    linear-gradient(180deg, rgba(10, 24, 48, 0.72), rgba(4, 12, 28, 0.9));
+    linear-gradient(180deg, rgba(18, 40, 74, 0.92), rgba(8, 20, 42, 0.96));
+  box-shadow:
+    0 18px 48px rgba(8, 30, 80, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition:
+    transform 280ms ease,
+    border-color 240ms ease,
+    box-shadow 280ms ease;
 }
 
-.media-frame__viewport {
-  position: relative;
-  overflow: hidden;
+.shot:hover {
+  transform: translateY(-4px);
+  border-color: rgba(46, 230, 255, 0.34);
+  box-shadow:
+    0 24px 56px rgba(20, 70, 160, 0.32),
+    0 0 0 1px rgba(46, 230, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.shot__chrome {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 14px 10px;
+}
+
+.shot__chrome span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(148, 180, 210, 0.35);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.shot__chrome span:nth-child(1) {
+  background: rgba(255, 120, 120, 0.55);
+}
+
+.shot__chrome span:nth-child(2) {
+  background: rgba(255, 196, 96, 0.55);
+}
+
+.shot__chrome span:nth-child(3) {
+  background: rgba(98, 214, 150, 0.55);
+}
+
+.shot__stage {
+  padding: 0 12px 12px;
+}
+
+.shot__img {
+  display: block;
   width: 100%;
-  border: 1px solid rgba(100, 170, 230, 0.14);
-  border-radius: calc(var(--radius-lg) - 8px);
-  background: #070d18;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
-}
-
-.media-frame__viewport--standard {
-  aspect-ratio: 16 / 10;
-}
-
-.media-frame__viewport--wide {
-  aspect-ratio: 21 / 10;
-}
-
-.media-frame__viewport--review {
-  aspect-ratio: 16 / 11;
-}
-
-.media-frame__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  transform-origin: center top;
-  transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.media-frame:hover .media-frame__img,
-.gallery-card:hover .media-frame__img,
-.trading-hero-card:hover .media-frame__img,
-.review-flow-card:hover .media-frame__img {
-  transform: scale(1.04);
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(100, 170, 230, 0.12);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
 }
 
 .why-grid {
@@ -1331,22 +1360,36 @@ a {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 22px;
 }
 
 .gallery-card {
-  overflow: hidden;
-  grid-column: span 3;
-  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
 }
 
 .gallery-card:first-child {
-  grid-column: span 6;
+  grid-column: 1 / -1;
 }
 
-.gallery-card div:last-child {
-  padding: 24px;
+.gallery-card__copy {
+  padding: 0 4px 4px;
+}
+
+.gallery-card__copy h4 {
+  margin: 0 0 8px;
+}
+
+.gallery-card__copy p {
+  margin: 0;
+}
+
+.gallery-card:hover .shot {
+  transform: translateY(-4px);
+  border-color: rgba(46, 230, 255, 0.34);
 }
 
 .review-flow {
@@ -1358,23 +1401,27 @@ a {
 .review-flow-steps {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  align-items: stretch;
+  gap: 22px;
+  align-items: start;
 }
 
 .review-flow-card {
-  position: relative;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.review-flow-card:hover .shot {
+  transform: translateY(-4px);
+  border-color: rgba(46, 230, 255, 0.34);
 }
 
 .review-flow-copy {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 22px;
-  flex: 1;
+  padding: 0 4px;
 }
 
 .review-step-label {
@@ -1667,14 +1714,19 @@ a {
 
   .gallery-card,
   .gallery-card:first-child {
-    grid-column: span 6;
+    grid-column: auto;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
   }
 
   .review-flow-steps {
     grid-template-columns: 1fr;
   }
 
-  .trading-hero-card {
+  .trading-hero-card .shot,
+  .trading-hero-card:hover .shot {
     transform: none;
   }
 }
@@ -1937,12 +1989,13 @@ a {
     padding-top: 36px;
   }
 
-  .gallery-card div:last-child {
-    padding: 22px;
+  .gallery-card__copy,
+  .review-flow-copy {
+    padding: 0 2px;
   }
 
   .gallery-card h4 {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .review-flow {
@@ -1951,11 +2004,19 @@ a {
   }
 
   .review-flow-steps {
-    gap: 20px;
+    gap: 28px;
   }
 
-  .review-flow-copy {
-    padding: 20px;
+  .shot__chrome {
+    padding: 10px 12px 8px;
+  }
+
+  .shot__stage {
+    padding: 0 10px 10px;
+  }
+
+  .shot__img {
+    border-radius: 12px;
   }
 
   .mission-card {
