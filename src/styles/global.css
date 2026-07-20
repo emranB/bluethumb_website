@@ -618,7 +618,7 @@ a {
 
 .dashboard-head strong {
   color: var(--cyan);
-  font-size: 2.6rem;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
   font-family: 'Syne', sans-serif;
 }
 
@@ -781,6 +781,59 @@ a {
   border-radius: var(--radius-lg);
   background: var(--surface-soft);
   box-shadow: var(--shadow);
+}
+
+.trading-intro.glass-panel {
+  align-items: stretch;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.trading-intro .product-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+
+.trading-intro .product-copy h3 {
+  margin-bottom: 18px;
+  font-size: clamp(1.7rem, 3.2vw, 2.55rem);
+  line-height: 1.12;
+}
+
+.trading-lede {
+  font-size: clamp(1.02rem, 1.7vw, 1.14rem);
+  color: #d7e8f8 !important;
+}
+
+.trading-intro .product-copy p {
+  margin-bottom: 1em;
+}
+
+.trading-pillars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 8px 0 22px;
+}
+
+.trading-pillars span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 14px;
+  border: 1px solid rgba(46, 230, 255, 0.22);
+  border-radius: var(--radius-sm);
+  background: rgba(46, 230, 255, 0.08);
+  color: #c7f7ff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.trading-intro .cta-row.compact {
+  margin-top: 4px;
 }
 
 .trading-intro {
@@ -974,40 +1027,42 @@ a {
 
 .audience-panel {
   margin: clamp(28px, 5vw, 48px) 0;
-  padding: clamp(22px, 3.5vw, 32px);
+  padding: clamp(24px, 3.5vw, 34px);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  background: var(--surface-soft);
+  background: var(--surface);
+  box-shadow: var(--shadow);
 }
 
 .audience-panel .eyebrow {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .audience-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  gap: 28px;
 }
 
 .audience-grid h4 {
-  margin: 0 0 12px;
+  margin: 0 0 14px;
   font-family: 'Syne', sans-serif;
+  font-size: 1.15rem;
   letter-spacing: -0.03em;
 }
 
 .audience-grid span {
   display: flex;
   align-items: flex-start;
-  gap: 9px;
-  margin: 10px 0;
+  gap: 10px;
+  margin: 12px 0;
   color: #c9d7ec;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .audience-grid svg {
   flex: 0 0 auto;
-  margin-top: 2px;
+  margin-top: 3px;
   color: var(--cyan);
 }
 
@@ -1910,6 +1965,15 @@ a {
 
   .trading-intro {
     margin-bottom: 48px;
+  }
+
+  .trading-pillars {
+    margin-bottom: 20px;
+  }
+
+  .trading-pillars span {
+    width: 100%;
+    justify-content: center;
   }
 
   .split-list {

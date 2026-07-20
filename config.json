@@ -20,7 +20,7 @@
   "hero": {
     "eyebrow": "Socially innovative fintech",
     "headline": "Financial technology that connects communities and empowers smarter decisions.",
-    "lede": "Bluethumb creates socially innovative financial technologies that help businesses strengthen communities and help individuals make better-informed decisions.",
+    "lede": "Bluethumb builds products that help businesses grow with their communities, and help investors understand markets with clearer, explainable intelligence.",
     "ctas": [
       { "label": "Explore Products", "href": "#products", "style": "primary" },
       { "label": "Watch Demo", "hrefKey": "demo", "style": "secondary", "external": true },
@@ -28,62 +28,62 @@
     ],
     "dashboard": {
       "label": "Live intelligence",
-      "score": "92%",
+      "score": "Clear",
       "signals": [
         { "label": "Community reach", "value": "Growing" },
         { "label": "Market clarity", "value": "High" }
       ],
       "tickers": [
-        { "label": "Retailer loyalty", "value": "+28%" },
-        { "label": "Investor confidence", "value": "+41%" },
+        { "label": "Retailer loyalty", "value": "Strong" },
+        { "label": "Investor confidence", "value": "Rising" },
         { "label": "Impact pathways", "value": "Active" }
       ]
     }
   },
   "about": {
     "eyebrow": "About Bluethumb Technologies",
-    "title": "Innovative financial products designed for real-world progress.",
-    "body": "Bluethumb Technologies builds modern financial products that connect business growth with community value, and help investors understand markets with greater confidence.",
+    "title": "Products designed for real people and real progress.",
+    "body": "We create modern financial experiences that turn everyday activity into shared value — for local businesses, the customers they serve, and investors who want to understand markets with confidence.",
     "focus": [
       {
         "icon": "HeartHandshake",
         "title": "Community-centered loyalty",
-        "body": "Connecting businesses and communities through smarter loyalty technology."
+        "body": "Helping businesses and neighborhoods grow together through smarter loyalty technology."
       },
       {
         "icon": "BrainCircuit",
-        "title": "AI-powered intelligence",
-        "body": "Helping investors understand markets through clear, explainable intelligence."
+        "title": "Explainable market intelligence",
+        "body": "Giving self-directed investors clearer insight into why a market opportunity looks attractive."
       }
     ]
   },
   "products": {
     "eyebrow": "Our Products and Services",
-    "title": "Two distinct experiences. One mission.",
-    "body": "Blueprint connects retailers, customers, and communities. Trading Intelligence gives self-directed investors a multi-brain reasoning engine with paper-first safety."
+    "title": "Two products. One purpose: better decisions.",
+    "body": "Blueprint helps retailers and communities grow together. Trading Intelligence helps investors see the market more clearly — with reasoning they can trust."
   },
   "blueprint": {
     "eyebrow": "Blueprint Loyalty Program",
     "title": "Reward customers. Support communities. Create impact.",
     "paragraphs": [
-      "Blueprint is a next-generation loyalty platform designed to help retailers attract and retain customers while creating positive impact within the communities they serve.",
-      "Unlike traditional loyalty programs focused only on transactions, Blueprint connects retailers, consumers, and local communities around a stronger shared outcome."
+      "Blueprint is a loyalty platform that helps retailers attract and keep customers while creating meaningful impact in the communities they serve.",
+      "Instead of loyalty that only tracks transactions, Blueprint connects businesses, shoppers, and local outcomes in one shared experience."
     ],
     "retailers": {
       "title": "For Retailers",
       "points": [
         "Attract new customers",
-        "Increase customer loyalty",
-        "Build stronger relationships",
+        "Strengthen loyalty and repeat visits",
+        "Build deeper customer relationships",
         "Create community connections",
-        "Stand apart through impact"
+        "Stand out through shared impact"
       ]
     },
     "consumers": {
       "title": "For Consumers",
       "points": [
-        "Use a mobile loyalty experience",
-        "Earn rewards with local businesses",
+        "Enjoy a simple mobile loyalty experience",
+        "Earn rewards with the businesses you already love",
         "Support positive community outcomes"
       ]
     },
@@ -97,15 +97,15 @@
       "items": [
         {
           "title": "Retailer growth",
-          "copy": "Help local businesses attract new customers and earn repeat visits through shared rewards."
+          "copy": "Help businesses attract new customers and earn more repeat visits through shared rewards."
         },
         {
           "title": "Member rewards",
-          "copy": "Give shoppers a mobile loyalty experience that feels useful — not another unused points card."
+          "copy": "Give shoppers a loyalty experience that feels useful — clear, mobile, and worth coming back for."
         },
         {
           "title": "Community impact",
-          "copy": "Connect everyday purchases to outcomes that matter in the neighborhoods retailers serve."
+          "copy": "Connect everyday purchases to outcomes that matter where people live and shop."
         },
         {
           "title": "Shared value loop",
@@ -116,87 +116,88 @@
   },
   "trading": {
     "eyebrow": "Bluethumb Trading Intelligence",
-    "title": "Professional-grade trading intelligence for self-directed investors.",
-    "lede": "Built for people who trade on Wealthsimple, Questrade, and similar platforms — and want better information, not faster wires. Bluethumb watches live markets, scores every symbol through a full intelligence stack, and explains its thinking in plain English before you act.",
-    "paperFirst": "It runs in paper mode by default: full dashboard, alerts, forecasts, and simulated fills — with no real capital at risk until you explicitly connect a broker.",
-    "committee": "Under the hood this is a trading desk of specialists, not a single model guessing. Technicals, news, forecasts, risk, portfolio, and market memory each weigh in every few seconds. Agreement raises confidence; contradiction lowers it — and the dashboard shows you why.",
+    "title": "Clearer market insight for self-directed investors.",
+    "lede": "Bluethumb helps you understand what the market is saying before you act. It watches live prices, reads the news, scores every symbol through multiple intelligence layers, and explains its thinking in plain English.",
+    "paperFirst": "You start in paper mode by default — full dashboard, alerts, forecasts, and simulated fills — so you can explore the experience safely before connecting any real capital.",
+    "committee": "Instead of one opaque score, Bluethumb works like a desk of specialists. Technicals, news, forecasts, risk, portfolio, and market memory each weigh in. When they agree, confidence rises. When they conflict, confidence falls — and you can see why.",
+    "pillars": ["Paper-first", "Explainable", "You decide"],
     "audience": {
       "eyebrow": "Who it's for",
-      "idealTitle": "Ideal for",
+      "idealTitle": "Built for",
       "ideal": [
         "Self-directed investors who want clearer decision support",
-        "Traders who care about why a symbol looks attractive",
-        "Teams evaluating AI-assisted trading without enterprise budgets"
+        "Traders who care about why an opportunity looks attractive",
+        "Anyone evaluating AI-assisted investing with transparency first"
       ],
       "notTitle": "Not designed for",
       "notFor": [
-        "Sub-millisecond HFT or market-making",
-        "Fully unattended live trading without oversight",
-        "Replacing a licensed financial advisor"
+        "Ultra-high-frequency or market-making strategies",
+        "Fully hands-off live trading without oversight",
+        "Replacing personalized advice from a licensed professional"
       ]
     },
     "why": [
       {
-        "title": "News → signals",
-        "copy": "Trusted headlines are scored and linked to the symbols you actually hold or watch."
+        "title": "News into clear signals",
+        "copy": "Important headlines are scored and linked to the symbols you follow, so context stays close to action."
       },
       {
         "title": "Multi-layer confidence",
-        "copy": "Buys and sells are considered only when independent systems agree — not one black-box score."
+        "copy": "Ideas are stronger when independent systems agree — not when a single black-box score says so."
       },
       {
-        "title": "Specialist committee",
-        "copy": "Risk, portfolio, news, memory, and forecast agents fuse views before a trade is sized."
+        "title": "Specialist perspectives",
+        "copy": "Risk, portfolio, news, memory, and forecast views come together before a recommendation is sized."
       },
       {
         "title": "Plain-English reasoning",
-        "copy": "Every insight and fill comes with language you can act on — not opaque model output."
+        "copy": "Every insight and simulated fill comes with language you can actually use."
       },
       {
-        "title": "Walk-forward forecasts",
-        "copy": "Price paths validated against real history, from minutes to months ahead."
+        "title": "Validated forecasts",
+        "copy": "Forward-looking paths are checked against real history — across short and longer horizons."
       },
       {
         "title": "Paper-first safety",
-        "copy": "Full experience and simulated fills before any live broker connection."
+        "copy": "Explore the full experience with simulated fills before any live connection."
       },
       {
-        "title": "Three-currency book",
-        "copy": "CAD, USD, and crypto each keep their own wallet, holdings, and P&L view."
+        "title": "Multi-currency portfolios",
+        "copy": "Canadian, U.S., and crypto holdings each keep their own wallet, positions, and performance view."
       },
       {
         "title": "You stay in control",
-        "copy": "Alerts and recommendations are decision support — the system suggests; you decide."
+        "copy": "Bluethumb recommends. You decide. Alerts and reasoning are decision support — not autopilot."
       }
     ],
     "pipeline": {
-      "title": "How information becomes a decision",
-      "subtitle": "One funnel from market noise to an explainable, paper-first action.",
+      "title": "How information becomes clarity",
+      "subtitle": "From market noise to an explainable, paper-first recommendation.",
       "stages": [
         {
           "id": "news",
           "title": "News & headlines",
-          "subtitle": "Scored stories tied to your symbols",
+          "subtitle": "Stories linked to your symbols",
           "icon": "Newspaper",
           "tone": "cyan"
         },
         {
           "id": "events",
           "title": "Events & alerts",
-          "subtitle": "Severity-ranked market intelligence",
+          "subtitle": "What matters most, ranked clearly",
           "icon": "Sparkles",
           "tone": "blue"
         },
         {
           "id": "signals",
           "title": "Per-symbol signals",
-          "subtitle": "Technicals blended with intelligence",
+          "subtitle": "Technicals blended with context",
           "icon": "LineChart",
           "tone": "violet"
         },
         {
           "id": "committee",
-          "title": "Specialist committee",
+          "title": "Specialist views",
           "subtitle": "Risk, portfolio, memory, and more",
           "icon": "Users",
           "tone": "green"
@@ -204,14 +205,14 @@
         {
           "id": "confidence",
           "title": "Confidence & forecast",
-          "subtitle": "Fused score, evidence, and path ahead",
+          "subtitle": "One clear picture, with evidence",
           "icon": "Network",
           "tone": "amber"
         },
         {
           "id": "decision",
           "title": "Your dashboard",
-          "subtitle": "Sized hint — paper fill by default",
+          "subtitle": "A recommendation you can review",
           "icon": "CheckCircle2",
           "tone": "blue"
         }
@@ -219,77 +220,77 @@
     },
     "stackIntro": {
       "eyebrow": "Intelligence stack",
-      "title": "Many specialists. One coherent story per symbol.",
-      "body": "Layers run every few seconds. Later ones can scale or veto earlier ones. Alignment raises confidence; disagreement lowers it — so you see one clear picture, not conflicting silos."
+      "title": "Many perspectives. One coherent story.",
+      "body": "Each layer sharpens the picture. Agreement raises confidence. Disagreement lowers it. The result is one clear view per symbol — not a pile of conflicting scores."
     },
     "dataStack": [
       {
         "id": "technical",
         "name": "Chart & regime",
         "role": "Structure",
-        "copy": "Trend, momentum, and market weather — is this symbol bullish, choppy, or risk-off?"
+        "copy": "Trend, momentum, and market conditions — so you know whether a symbol looks healthy or unsettled."
       },
       {
         "id": "news",
         "name": "News & alerts",
-        "role": "Narrative",
-        "copy": "Headlines and events scored to tickers, with severity, source trust, and acknowledge controls."
+        "role": "Context",
+        "copy": "Headlines and events scored to symbols, with clear severity and source context."
       },
       {
         "id": "forecast",
-        "name": "Walk-forward forecasts",
-        "role": "Forward view",
-        "copy": "Validated price paths and probabilities — trained only on history the model had not seen yet."
+        "name": "Forward outlook",
+        "role": "Projection",
+        "copy": "Validated paths and probabilities that help you see what may come next."
       },
       {
         "id": "committee",
-        "name": "Multi-agent council",
+        "name": "Specialist council",
         "role": "Debate",
-        "copy": "Portfolio, risk, graph, memory, and narrative agents publish views before any size is set."
+        "copy": "Portfolio, risk, relationships, memory, and narrative views contribute before sizing."
       },
       {
         "id": "fusion",
         "name": "Confidence fusion",
-        "role": "Editor",
-        "copy": "Evidence is fused into one explainable confidence record — including contradictions and freshness."
+        "role": "Clarity",
+        "copy": "Evidence is combined into one explainable confidence view — including what disagrees."
       },
       {
         "id": "safety",
-        "name": "Risk gates & paper fill",
-        "role": "Safety",
-        "copy": "Hard limits, pause controls, and simulated execution by default until you enable live trading."
+        "name": "Safety & paper mode",
+        "role": "Protection",
+        "copy": "Guardrails, pause controls, and simulated execution by default until you choose otherwise."
       }
     ],
     "features": [
       {
         "icon": "Newspaper",
         "title": "Intelligence workspace",
-        "copy": "News, forecasts, drivers, scoreboard, graph, and live feed in one place."
+        "copy": "News, forecasts, relationships, and live context in one calm place."
       },
       {
         "icon": "BrainCircuit",
         "title": "Live reasoning",
-        "copy": "See what the engine is considering symbol by symbol — and leave feedback."
+        "copy": "See what the system is considering, symbol by symbol."
       },
       {
         "icon": "LineChart",
-        "title": "Explainable trade history",
-        "copy": "Every fill includes P&L and a plain-English why."
+        "title": "Explainable history",
+        "copy": "Review activity with plain-English context beside performance."
       },
       {
         "icon": "WalletCards",
-        "title": "CAD · USD · Crypto wallets",
-        "copy": "Segmented books that mirror how self-directed investors actually hold money."
+        "title": "Clear portfolio views",
+        "copy": "Separate books for Canadian, U.S., and crypto holdings."
       },
       {
         "icon": "ShieldCheck",
-        "title": "Safety controls",
-        "copy": "Pause, emergency stop, safe mode, and deploy health checks built in."
+        "title": "Built-in safety",
+        "copy": "Pause, stop, and defensive modes when conditions look unstable."
       },
       {
         "icon": "LockKeyhole",
         "title": "Paper-first by design",
-        "copy": "SIM mode is the default — no hidden live orders."
+        "copy": "Practice and evaluate safely before any live connection."
       }
     ],
     "ctaLabel": "Open Bluethumb Trading Intelligence",
@@ -297,63 +298,63 @@
     "heroImageAlt": "Bluethumb Trading Intelligence portfolio command center",
     "gallery": {
       "eyebrow": "Product tour",
-      "title": "The surfaces investors use every session.",
-      "body": "Portfolio health, forecasts, alerts, trade history, and decision review — live in Bluethumb Trading Intelligence.",
+      "title": "The views you’ll use every day.",
+      "body": "Portfolio health, forecasts, alerts, trade history, and decision review — all inside Bluethumb Trading Intelligence.",
       "items": [
         {
           "image": "/images/trading-dashboard.png",
           "title": "Portfolio command center",
-          "copy": "CAD, USD, and crypto books with cash, holdings, unrealized P&L, session profit, and win rate in one live view."
+          "copy": "See cash, holdings, and session performance across your books in one calm overview."
         },
         {
           "image": "/images/trading-forecasts.png",
           "title": "Forecast cards",
-          "copy": "Per-symbol BUY/SELL outlooks with walk-forward paths, confidence, expected move, and probability of upside."
+          "copy": "Review outlooks with confidence, expected move, and a clear forward path."
         },
         {
           "image": "/images/trading-alerts.png",
           "title": "Intelligence alerts",
-          "copy": "Severity-ranked market and news signals tied to symbols, sources, confidence, and one-click acknowledgment."
+          "copy": "Stay close to ranked market and news signals tied to the symbols you follow."
         },
         {
           "image": "/images/trading-trades-log.png",
-          "title": "Explainable trade log",
-          "copy": "Every fill with side, size, P&L, cumulative profit, and the engine reason behind the action."
+          "title": "Explainable activity log",
+          "copy": "Every simulated fill includes size, result, and the reason behind the action."
         },
         {
           "image": "/images/trading-decision-report.png",
           "title": "Decision report",
-          "copy": "Plain-English breakdowns: confidence, key factors, and how each system voted."
+          "copy": "Understand confidence, key factors, and how perspectives came together."
         },
         {
           "image": "/images/trading-session.png",
           "title": "Session performance",
-          "copy": "Live engine status, session P&L, trade count, and win rate at a glance."
+          "copy": "Track progress, activity, and outcomes at a glance throughout the day."
         }
       ]
     },
     "reviewFlow": {
       "eyebrow": "AI trade review",
-      "title": "Before you trade, see the fused recommendation.",
-      "body": "Review Buy walks a ticket through rating, confidence, odds, and specialist votes — then recommends buy, sell, or wait with an optimal size.",
+      "title": "Review the recommendation before you act.",
+      "body": "See the fused outlook, how each perspective voted, and the final buy, sell, or wait guidance — with a suggested size.",
       "steps": [
         {
           "image": "/images/trading-review-1.png",
           "label": "01 · Consensus",
           "title": "Fused outlook",
-          "copy": "AI rating, confidence, favorable odds, and a final HOLD/BUY/SELL consensus with an optimal ticket."
+          "copy": "Rating, confidence, odds, and a clear final recommendation with an optimal ticket."
         },
         {
           "image": "/images/trading-review-2.png",
-          "label": "02 · System votes",
-          "title": "How each brain voted",
-          "copy": "Technical, news, alerts, profile, memory, and forecast systems each cast a weighted vote with live reasoning."
+          "label": "02 · Perspectives",
+          "title": "How each view contributed",
+          "copy": "Technical, news, alerts, profile, memory, and forecast perspectives each share their vote."
         },
         {
           "image": "/images/trading-review-3.png",
           "label": "03 · Policy & risk",
-          "title": "Validation to decision",
-          "copy": "Backtests, scenarios, risk guardrails, and adaptive layers feed the final buy/sell/wait policy."
+          "title": "From evidence to decision",
+          "copy": "Validation, scenarios, and risk guardrails shape the final buy, sell, or wait policy."
         }
       ]
     }
@@ -361,12 +362,12 @@
   "mission": {
     "eyebrow": "Mission / Vision",
     "title": "Technology should empower people.",
-    "body": "Bluethumb Technologies creates products that simplify complexity and create meaningful impact. Blueprint helps communities and businesses connect. Bluethumb Trading Intelligence helps investors better understand markets.",
+    "body": "Bluethumb builds products that simplify complexity and create meaningful impact. Blueprint helps communities and businesses grow together. Trading Intelligence helps investors understand markets with greater clarity.",
     "statement": "Build technology that helps people make better decisions."
   },
   "footer": {
     "eyebrow": "Contact",
-    "title": "Ready to talk products, partnerships, or a demo?",
+    "title": "Let’s talk about your next step.",
     "ctaLabel": "Email Bluethumb",
     "ctaHrefKey": "contactEmail",
     "columns": [

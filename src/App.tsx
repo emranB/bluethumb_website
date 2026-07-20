@@ -498,12 +498,17 @@ function ProductTrading() {
           {config.trading.eyebrow}
         </div>
 
-        <div className="product-block trading-intro">
+        <div className="product-block trading-intro glass-panel">
           <div className="product-copy reveal-on-scroll">
             <h3>{config.trading.title}</h3>
-            <p>{config.trading.lede}</p>
+            <p className="trading-lede">{config.trading.lede}</p>
             <p>{config.trading.paperFirst}</p>
             <p>{config.trading.committee}</p>
+            <div className="trading-pillars" aria-label="Product principles">
+              {config.trading.pillars.map((pillar) => (
+                <span key={pillar}>{pillar}</span>
+              ))}
+            </div>
             <div className="cta-row compact">
               <a
                 className="button primary"
